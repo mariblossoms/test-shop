@@ -1,11 +1,22 @@
 {
-  "name": "my.shop",
-  "version": "1.0.0",
-  "description": "Online store '7h3 5h0p'",
+  "name": "static-project-template",
+  "version": "0.0.1",
+  "description": "Simple project template with Webpack/WDS for static resources and PHP with built in server for templating.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
   },
-  "author": "Maria",
-  "license": "ISC"
+  "author": "Andrey Miskov",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.11",
+    "eslint": "^3.19.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "stylelint": "^7.13.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0"
+  }
 }
