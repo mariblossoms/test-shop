@@ -18,5 +18,13 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-less": "^3.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariblossoms/online-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mariblossoms/online-store/issues"
+  },
+  "homepage": "https://github.com/mariblossoms/online-store#readme"
 }

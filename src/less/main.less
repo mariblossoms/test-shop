@@ -1,41 +1,420 @@
-@import 'media';
-
-// Код для примера
-body {
-    background: #ccc;
-}
-
-.menu {
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
-    background: red; // red on small devices
+}
 
-    @media @tablet {
-        background: green; // green on medium devices
+@import 'media';
+@color_red: rgb(204, 0, 0);
+@color_gray: rgb(217, 217, 212);
+@color_white: rgb(255, 255, 255);
+@color_black: rgb(0, 0, 0);;
+@font_default: "Roboto";
+@font_tel: "Consolas";
+@pad: 20px;//100px
+@font_name: 36px;
+@size_button: 40px;
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+.header, .h-menu, .breadcrumbs,.product, .footer {display: block}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+div {display: block;}
+
+.content {
+    padding-bottom: 90px;
+}
+.page {
+    width: 100%;
+    margin: 0 0px;
+    padding: 0;
+    max-width: 1280px;
+    font-family: @font_default;
+    position: relative;
+    min-height: 100%;
+}
+//
+//Название-логтип-телефон
+//
+.header {
+        //height: 100px;
+        font-size: 16px;
+        font-weight: bold;
+        color: @color_red;
+        position: absolute;
+        width: 100%;
+        background: @color_white;
+       // margin: 0 100px 0 100px;
+        padding: 15px 0px;
+        &__number {
+            float: left;
+            text-align: left;
+            margin-left: 100px;
+             }
+        &__logo {
+
+            text-align: center;
+         }
+        &__phone {
+            float: right;
+            margin-right: 100px;
+                   }
     }
 
-    @media @desktop {
-        background: blue; // blue on large devices
-    }
 
-    &__item {
-        display: inline-block;
-        list-style-type: none;
-    }
 
-    &__link {
-        color: #FFF;
-    }
+.header__number{
+    width: 100px;
+}
+.header__phone{
+    width: 150px;
+}
 
-    // Bottom Menu
-    &_bottom { // BEM modifier example
-        background: green;
-    }
+.header__logo{
+    width: 300px;
+    height: auto;
+    margin:0 0 0 450px;
+    //max-width:  30px;
+}
+.logo__img{
+    width: 30px;
+}
 
-    &_bottom &__link {
-        color: #f00;
+
+
+//
+//Меню навигации и поиска
+//
+.h-menu {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 0;
+    background-color: @color_gray;
+    width: 100%;
+    &__nav {
+        float: left;
+        width: 350px;
+        text-align: left;
+        font-family: @font_default;
+        margin-left: 100px;
+        padding: 10px 0px;
+
+        &__link {
+            float: left;
+        }
+
+    }
+    &__search {
+        float: right;
+        margin-right: 100px;
+
     }
 }
+.nav__link{
+    color: @color_red;
+    margin-right: 10px;
+    text-decoration: underline;
+    &_active{
+        color: @color_black;
+        text-decoration: none;
+
+    }
+}
+
+.input {
+    background-color: #f3f3f3;
+    border:1px solid #e7e7e7;
+}
+.search__input {
+    display:inline-block;
+}
+
+.button {
+    padding:1px 10px;
+    line-height: 25px;
+    cursor:pointer;
+    background-color: @color_white;
+}
+.input__search {
+    height:27px;
+    padding:1px 10px;
+    width:135px;
+    border-right:none;
+}
+.search {
+    border-style: solid;
+    border-width: 0px;
+    padding: 5px 0px;
+    //border-color: @color_gray;
+    //background-color: @color_back;
+}
+//
+//ХЛЕБНЫЕ крошки
+//
+
+
+.breadcrumbs {
+    position: absolute;
+    font-size: 16px;
+    margin-right: 50px;
+    margin-top: 150px;
+    width: 100%;
+    text-decoration: none;
+    font-weight: bold;
+
+    &__list {
+        margin-left: 100px;
+        float: left;
+        width: 500px;
+         &__link {
+            margin-right: 10px;
+         }
+        }
+   }
+
+.list__link{
+    color: @color_red;
+
+    text-decoration: underline;
+
+    &_slash{
+        color: @color_black;
+
+    }
+    &_last{
+        color: @color_black;
+        text-decoration: none;
+    }
+}
+
+//
+//ОСНОВНАЯ ЧАСТЬ СТРАНИЧКИ
+
+//
+//КАРТИНКА ПРОДУКТА
+//
+
+.product {
+         position: absolute;
+
+         margin-top: 180px;
+         margin-left: 100px;
+         &__img{
+              // background-size: cover ;
+               float: left;
+               &__pict{
+                }
+         }
+         &__info{
+             float: right;
+             padding-left: 30px;
+             &__composition {
+
+             }
+             &__size__b-size{
+                 width: 30px;
+                 max-width: 100px;
+
+                 &__S {
+                     float: left;
+                 }
+                 &__M {
+                     //float: left;
+                 }
+                 &__L {
+                     float: right;
+                 }
+             }
+          }
+
+}
+.img__pict {
+    width: 500px ;
+    height: auto;
+    max-width: 600px;
+}
+.product__img{
+    height: 500px;
+   // line-height: 500px;
+  //  margin: 0 auto;
+  //  position: relative;
+   // overflow: hidden;
+    //width: 50% ;
+    //   height: auto;
+}
+.product__info {
+    font-family: @font_default;
+}
+.info__name{
+    font-size: 24px;
+    color: @color_black;
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+}
+
+.info__composition {
+    position: relative;
+    font-size: 11px;
+    color: @color_black;
+    padding-top: 1px;
+}
+.info__price{
+    padding-top: 10px;
+    font-weight: bold;
+    color: @color_red;
+    font-size: 25px;
+}
+.info__size-text{
+    padding-top: 10px;
+    color: @color_black;
+    font-size: 12px;
+    }
+.size__b-size{
+
+}
+.size__b-size_S{
+    margin-top: 10px;
+    width: @size_button;
+    height: @size_button;
+    text-align: center;
+    border: 1px solid silver ;
+    background-color: #fffafb;
+    font-size: 28px;
+    color: @color_black;
+    position: relative;
+     }
+.size__b-size_M{
+    width: @size_button;
+    height: @size_button;
+    text-align: center;
+    border: 1px solid silver ;
+    background-color: #fffafb;
+    font-size: 28px;
+    color: @color_black;
+    position: relative;
+}
+.size__b-size_L{
+    width: @size_button;
+    height: @size_button;
+    text-align: center;
+    border: 1px solid silver ;
+    background-color: #fffafb;
+    font-size: 28px;
+    color: @color_black;
+    position: relative;
+}
+
+
+
+.info__color-text{
+    padding-top: 10px;
+    color: @color_black;
+    font-size: 12px;
+}
+.color__1{
+    width: @size_button;
+    height: @size_button;
+    border: 1px solid silver ;
+    background-color: #fffafb;
+    margin-top: 10px;
+
+}
+.color__2{
+    width: @size_button;
+    height: @size_button;
+    border: 1px solid silver ;
+    background-color: #e3d95e ;
+
+}
+.color__3{
+    width: @size_button;
+    height: @size_button;
+    border: 1px solid silver ;
+    background-color: #a5af96 ;
+}
+.color__1_link{
+    display: block;
+    text-align: center;
+    height: 100%;
+
+ }
+.color__1_link:active{
+    border: 2px solid @color_red;
+}
+.color__1_link:visited{
+    border: 2px solid @color_red;
+}
+
+.color__2_link{
+    display: block;
+    text-align: center;
+    height: 100%;
+}
+.color__3_link{
+    display: block;
+    text-align: center;
+    height: 100%;
+}
+.info__buy{
+    margin-top: 20px;
+    width: @size_button*3;
+    height: @size_button;
+    border: 1px solid @color_red ;
+    background-color: @color_red ;
+}
+.info__buy_btn{
+    padding-top: 8px;
+    display: block;
+    text-align: center;
+    height: 100%;
+    color: @color_white;
+}
+.info__heart{
+    margin-top: 20px;
+    width: 200px;
+    float: left;
+    &__defer{
+        margin-right: 10px;
+    }
+}
+.heart__img_pic{
+    width: 10px;
+}
+.heart__defer{
+   // float: right;
+    font-size: 11px;
+}
+
+//
+//Футер
+//
+
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: @color_gray;
+    font-size: 11px ;
+}
+
+
+
+
 
 
