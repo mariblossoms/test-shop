@@ -7,194 +7,219 @@
 @color_red: rgb(204, 0, 0);
 @color_gray: rgb(217, 217, 212);
 @color_white: rgb(255, 255, 255);
-@color_black: rgb(0, 0, 0);;
+@color_black: rgb(0, 0, 0);
+@font_size_footer: 12px;
 @font_default: "Roboto";
 @font_tel: "Consolas";
-@pad: 20px;//100px
+@pad: 20px; //100px
 @font_name: 36px;
 @size_button: 40px;
-
 
 html,
 body {
     height: 100%;
     width: 100%;
 }
-.header, .h-menu, .breadcrumbs,.product, .footer {display: block}
+
+//.header, .h-menu, .breadcrumbs,.product, .footer {display: block}
 
 a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
 }
-div {display: block;}
+
+div {
+    display: block;
+}
 
 .content {
-    padding-bottom: 90px;
+    padding-bottom: 80px;
 }
+
 .page {
     width: 100%;
-    margin: 0 0px;
-    padding: 0;
     max-width: 1280px;
     font-family: @font_default;
     position: relative;
-    min-height: 100%;
+    height: 100%;
+    //height: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media @phone-strict {
+        .page {
+            max-height: 667px;
+        }
+    }
 }
+
 //
 //Название-логтип-телефон
 //
 .header {
-        //height: 100px;
-        font-size: 16px;
-        font-weight: bold;
-        color: @color_red;
-        position: absolute;
-        width: 100%;
-        background: @color_white;
-       // margin: 0 100px 0 100px;
-        padding: 15px 0px;
-        &__number {
-            float: left;
-            text-align: left;
-            margin-left: 100px;
-             }
-        &__logo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    color: @color_red;
+    width: 100%;
+    padding: 15px 0px;
 
-            text-align: center;
-         }
-        &__phone {
-            float: right;
-            margin-right: 100px;
-                   }
+    &__number {
+        text-align: left;
+        //   margin-left: 100px;
+        width: 100px;
+        margin-left: 100px;
     }
+    &__logo {
+        text-align: center;
+        width: 35px;
+        height: auto;
 
+    }
+    &__phone {
+        text-align: right;
+        margin-right: 100px;
+    }
+    @media @phone-strict {
+        font-size: 12px;
+        height: 30%;
+        &__phone {
+            margin-right: 5%;
+        }
 
+        &__logo {
+            &_img {
+                width: 50%;
+            }
+        }
 
-.header__number{
-    width: 100px;
+        &__number {
+            width: 20%;
+            margin-left: 5%;
+        }
+
+    }
 }
-.header__phone{
-    width: 150px;
-}
 
-.header__logo{
-    width: 300px;
-    height: auto;
-    margin:0 0 0 450px;
-    //max-width:  30px;
-}
-.logo__img{
+//размер логотипа уменьшили
+.logo_img {
     width: 30px;
 }
-
-
 
 //
 //Меню навигации и поиска
 //
 .h-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 16px;
-    font-weight: bold;
     line-height: 1;
-    position: absolute;
-    margin-top: 50px;
-    margin-left: 0;
+    margin: 5px 0 0 0;
     background-color: @color_gray;
     width: 100%;
     &__nav {
-        float: left;
         width: 350px;
         text-align: left;
         font-family: @font_default;
         margin-left: 100px;
         padding: 10px 0px;
+    }
+    &__search {
+        margin-right: 100px;
+    }
 
-        &__link {
-            float: left;
+    @media @phone-strict {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 12px;
+        &__nav {
+            margin-left: 5%;
+            width: 300px;
+        }
+
+        &__search {
+            margin-left: 5%;
+            margin-bottom: 2%;
         }
 
     }
-    &__search {
-        float: right;
-        margin-right: 100px;
-
-    }
 }
-.nav__link{
+
+.nav__link {
     color: @color_red;
     margin-right: 10px;
     text-decoration: underline;
-    &_active{
+    &_active {
         color: @color_black;
         text-decoration: none;
 
     }
 }
 
-.input {
-    background-color: #f3f3f3;
-    border:1px solid #e7e7e7;
-}
-.search__input {
-    display:inline-block;
+.h-menu__search {
+    width: 200px;
+    height: 20px;
+    display: flex;
+    align-items: stretch; // растягиваем инпуты по длине блока поиска
+    border: 1px solid #FFFFFF  ;
 }
 
-.button {
-    padding:1px 10px;
-    line-height: 25px;
-    cursor:pointer;
+.search_input {
+    border: none;
+    outline: none;
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    width: 174px; /* Ширина поля */
+    vertical-align: middle;
+
+}
+
+.search_img {
+    width: 200px - 174px;
+    height: auto;
     background-color: @color_white;
-}
-.input__search {
-    height:27px;
-    padding:1px 10px;
-    width:135px;
-    border-right:none;
-}
-.search {
-    border-style: solid;
-    border-width: 0px;
-    padding: 5px 0px;
-    //border-color: @color_gray;
-    //background-color: @color_back;
-}
-//
+  }
+
+
+////
 //ХЛЕБНЫЕ крошки
 //
 
-
 .breadcrumbs {
-    position: absolute;
     font-size: 16px;
-    margin-right: 50px;
-    margin-top: 150px;
+    margin: 45px 0 0 0;
     width: 100%;
     text-decoration: none;
-    font-weight: bold;
-
     &__list {
         margin-left: 100px;
-        float: left;
         width: 500px;
-         &__link {
+        &__link {
             margin-right: 10px;
-         }
         }
-   }
-
-.list__link{
-    color: @color_red;
-
-    text-decoration: underline;
-
-    &_slash{
-        color: @color_black;
-
     }
-    &_last{
+    @media @phone-strict {
+        font-size: 12px;
+        margin: 10px 0 0 0;
+        &__list {
+            margin-left: 5%;
+        }
+    }
+
+}
+
+.list__link {
+    color: @color_red;
+    text-decoration: underline;
+    &_slash {
+        color: @color_black;
+    }
+    &_last {
         color: @color_black;
         text-decoration: none;
     }
@@ -208,211 +233,326 @@ div {display: block;}
 //
 
 .product {
-         position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 30px 0 0 100px;
+    &__img {
+        // background-size: cover ;
+        //float: left;
 
-         margin-top: 180px;
-         margin-left: 100px;
-         &__img{
-              // background-size: cover ;
-               float: left;
-               &__pict{
-                }
-         }
-         &__info{
-             float: right;
-             padding-left: 30px;
-             &__composition {
+    }
+    &__info {
+        // float: right;
+        padding-left: 30px;
+        &__composition {
 
-             }
-             &__size__b-size{
-                 width: 30px;
-                 max-width: 100px;
+        }
+        &__size__b-size {
+            width: 30px;
+            max-width: 100px;
 
-                 &__S {
-                     float: left;
-                 }
-                 &__M {
-                     //float: left;
-                 }
-                 &__L {
-                     float: right;
-                 }
-             }
-          }
+        }
+    }
+    @media @phone-strict {
+        margin: 5% 5% 5% 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__info {
+            display: block;
+            padding-left: 0px;
+            margin-top: 10px;
+            //  background-color: aquamarine;
+        }
+
+    }
 
 }
-.img__pict {
-    width: 500px ;
+
+// Картинка товара
+ .product__img_pict {
+    text-align: center;
+    width: 500px; //500px
     height: auto;
-    max-width: 600px;
+    //  max-width: 600px;
+    @media @phone-strict {
+        width: 60%;
+    }
 }
-.product__img{
-    height: 500px;
-   // line-height: 500px;
-  //  margin: 0 auto;
-  //  position: relative;
-   // overflow: hidden;
-    //width: 50% ;
-    //   height: auto;
-}
+//// расположение картинки в центре блока
+ .product__img{
+     text-align: center;
+ }
+
+
+// Информация о товаре
 .product__info {
     font-family: @font_default;
 }
-.info__name{
+
+.info__name {
     font-size: 24px;
     color: @color_black;
     font-weight: bold;
     text-align: left;
-    position: relative;
+    // position: relative;
 }
 
 .info__composition {
-    position: relative;
+    //position: relative;
     font-size: 11px;
     color: @color_black;
     padding-top: 1px;
 }
-.info__price{
+
+.info__price {
     padding-top: 10px;
     font-weight: bold;
     color: @color_red;
     font-size: 25px;
 }
-.info__size-text{
-    padding-top: 10px;
-    color: @color_black;
-    font-size: 12px;
-    }
-.size__b-size{
 
-}
-.size__b-size_S{
-    margin-top: 10px;
-    width: @size_button;
-    height: @size_button;
-    text-align: center;
-    border: 1px solid silver ;
-    background-color: #fffafb;
-    font-size: 28px;
-    color: @color_black;
-    position: relative;
-     }
-.size__b-size_M{
-    width: @size_button;
-    height: @size_button;
-    text-align: center;
-    border: 1px solid silver ;
-    background-color: #fffafb;
-    font-size: 28px;
-    color: @color_black;
-    position: relative;
-}
-.size__b-size_L{
-    width: @size_button;
-    height: @size_button;
-    text-align: center;
-    border: 1px solid silver ;
-    background-color: #fffafb;
-    font-size: 28px;
-    color: @color_black;
-    position: relative;
-}
-
-
-
-.info__color-text{
+.info__size-text {
     padding-top: 10px;
     color: @color_black;
     font-size: 12px;
 }
-.color__1{
+
+.info__size {
+    display: flex;
+
+}
+
+
+.size__b-size {
+    margin-right: 4px;
+    margin-top: 10px;
+    width: @size_button;
+    text-align: center;
+    border: 1px solid silver;
+    background-color: #fffafb;
+    font-size: 28px;
+    color: @color_black;
+    height: 100%;
+}
+
+.size__b-size_red {
+    border: 2px solid @color_red;
+
+}
+
+.info__color-text {
+    padding-top: 10px;
+    color: @color_black;
+    font-size: 12px;
+}
+
+.info__color {
+    display: flex;
+    align-items: flex-end;
+}
+
+.color__1 {
     width: @size_button;
     height: @size_button;
-    border: 1px solid silver ;
+    border: 1px solid silver;
     background-color: #fffafb;
     margin-top: 10px;
+    margin-right: 4px;
 
 }
-.color__2{
+
+.color__2 {
     width: @size_button;
     height: @size_button;
-    border: 1px solid silver ;
-    background-color: #e3d95e ;
+    border: 1px solid silver;
+    background-color: #e3d95e;
+    margin-right: 4px;
 
 }
-.color__3{
+
+.color__3 {
     width: @size_button;
     height: @size_button;
-    border: 1px solid silver ;
-    background-color: #a5af96 ;
-}
-.color__1_link{
-    display: block;
-    text-align: center;
-    height: 100%;
-
- }
-.color__1_link:active{
-    border: 2px solid @color_red;
-}
-.color__1_link:visited{
-    border: 2px solid @color_red;
+    border: 1px solid silver;
+    background-color: #a5af96;
+    margin-right: 4px;
 }
 
-.color__2_link{
-    display: block;
-    text-align: center;
-    height: 100%;
-}
-.color__3_link{
-    display: block;
-    text-align: center;
-    height: 100%;
-}
-.info__buy{
+.info__buy {
     margin-top: 20px;
     width: @size_button*3;
     height: @size_button;
-    border: 1px solid @color_red ;
-    background-color: @color_red ;
+    border: 1px solid @color_red;
+    background-color: @color_red;
+    @media @phone-strict {
+        width: @size_button*8;
+        height: @size_button;
+    }
 }
-.info__buy_btn{
+
+.info__buy_btn {
     padding-top: 8px;
     display: block;
     text-align: center;
     height: 100%;
     color: @color_white;
 }
-.info__heart{
+
+.info__heart {
     margin-top: 20px;
     width: 200px;
-    float: left;
-    &__defer{
-        margin-right: 10px;
+    display: flex;
+    //justify-content: flex-start;
+    align-items: center;
+    &__defer {
+        padding-left: 20px;
     }
 }
-.heart__img_pic{
-    width: 10px;
+
+.heart__img {
+    width: 15px;
 }
-.heart__defer{
-   // float: right;
-    font-size: 11px;
+
+.heart__defer {
+    padding-left: 10px;
+    font-size: 12px;
+    text-decoration: underline;
 }
 
 //
 //Футер
 //
 
-
 .footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
     width: 100%;
     background-color: @color_gray;
-    font-size: 11px ;
+    //font-size: 6px;
+    &__page{
+        display: flex; // на пк элементы горизонтально
+        justify-content: space-between;
+        @media @phone-strict {
+            flex-direction: column; // на телефоне элементы вертикально
+            align-items: stretch;
+        }
+
+    }
+
 }
 
+
+///////задаем размеры блоков внутри page части
+.footer__service {
+    width: 300px;
+}
+
+.footer__about-us {
+    width: 200px;
+}
+
+.footer__info {
+    width: 300px;
+}
+///////////////////////////////////
+
+/////делаем отступы слева и справа у футера
+.footer__service, .footer__end, .footer__line {
+    margin-left: 100px;
+
+}
+.footer__service, .footer__end, .footer__line,.footer__about-us, .footer__info, .footer__social  {
+    @media @phone-strict {
+        margin-left: 20px;
+    }
+}
+
+.footer__social, .footer__line {
+    margin-right: 100px;
+    @media @phone-strict {
+        margin-right: 20px;
+    }
+}
+
+/////////////////////////
+.service__header, .about-us__header {
+    color: @color_black;
+    font-weight: bold;
+    font-size: @font_size_footer;
+    text-align: left;
+    // margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.service__part, .about-us__part {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+
+.footer__service, .footer__about-us, .footer__info, .footer__social {
+    margin-top: 20px;
+
+}
+
+.service__link, .about-us__link, .del__text, .gift__text, .prom__text {
+    font-size: @font_size_footer;
+    color: @color_black;
+    text-align: left;
+}
+
+.icons__img {
+    width: 20px;
+}
+
+.footer__social {
+    display: flex;
+    flex-direction: column;
+}
+
+.social__icon {
+    width: 20px;
+    margin-bottom: 6px;
+}
+
+.social__icon_facebook {
+    width: 10px;
+}
+
+////задаем размер иконок в футере
+.del__img {
+    width: 30px;
+}
+
+.gift__img {
+    width: 20px;
+}
+
+.prom__img {
+    width: 15px;
+}
+
+//////////
+
+//////выравнивание трертьей колонки с иконками
+.info__delivery {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2px;
+}
+
+.del__text, .gift__text, .prom__text {
+    margin-left: 5px;
+    height: 20px;
+}
+
+.footer__end {
+    margin-top: 10px;
+    font-size: @font_size_footer;
+    padding-bottom: 20px;
+
+}
 
 
 
