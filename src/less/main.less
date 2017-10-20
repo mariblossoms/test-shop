@@ -329,14 +329,23 @@ div {
     margin-right: 4px;
     margin-top: 10px;
     width: @size_button;
+    height: @size_button;
     text-align: center;
     border: 1px solid silver;
     background-color: #fffafb;
     font-size: 28px;
     color: @color_black;
-    height: 100%;
+  //  height: 100%;
 }
 
+.size__inp{
+    display: none;
+}
+.size__label1 input:checked+ .size__b-size,
+.size__label2 input:checked+ .size__b-size,
+.size__label3 input:checked+ .size__b-size {
+    border: 1px solid @color_red ;
+}
 .size__b-size_red {
     border: 2px solid @color_red;
 
@@ -432,6 +441,7 @@ div {
     &__page{
         display: flex; // на пк элементы горизонтально
         justify-content: space-between;
+
         @media @phone-strict {
             flex-direction: column; // на телефоне элементы вертикально
             align-items: stretch;
@@ -467,7 +477,7 @@ div {
     }
 }
 
-.footer__social, .footer__line {
+.footer__social, .footer__end, .footer__line {
     margin-right: 100px;
     @media @phone-strict {
         margin-right: 20px;
@@ -482,9 +492,13 @@ div {
     text-align: left;
     // margin-top: 20px;
     margin-bottom: 5px;
+    @media @phone-strict {
+        font-size: 80%;
+        text-align: center;
+    }
 }
 
-.service__part, .about-us__part {
+.service__part_link, .about-us__part_link {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -496,7 +510,7 @@ div {
 
 }
 
-.service__link, .about-us__link, .del__text, .gift__text, .prom__text {
+.service__part_link, .about-us__part_link, .del__text, .gift__text, .prom__text {
     font-size: @font_size_footer;
     color: @color_black;
     text-align: left;
@@ -506,9 +520,22 @@ div {
     width: 20px;
 }
 
+// Задаем параметры расположения блоков содержания Сервис и поддержка
+// О компании
+.service__part, .about-us__part{
+    display: flex;
+    justify-content: space-between;
+
+}
+/// для блока с кнопками соц сетей делаем вертикально на пк
+/// на малых экранах горизонтально
 .footer__social {
     display: flex;
     flex-direction: column;
+    @media @phone-strict {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
 
 .social__icon {

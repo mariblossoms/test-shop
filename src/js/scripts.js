@@ -14,3 +14,8 @@ function changeImg(lin){
     var img = document.getElementById("img__id");
     img.src=lin;
 };
+function ChangeBorder() {
+    var c = document.getElementsByName('check');
+    console.log(c);
+    if(!c[1].checked) c[1].checked=true;// поставить cheked на второй input если он не установлен
+}

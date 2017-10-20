@@ -33,7 +33,7 @@
                 <a href="#" class="nav__link">Python</a>
                 <a href="#" class="nav__link">PHP</a>
             </div>
-            <form action="//google.com/search" class="h-menu__search search" >
+            <form action="//google.com/search" class="h-menu__search search">
                 <input type="search" class="search_input" placeholder="">
                 <input type="image" class="search_img" src="img/search.svg">
             </form>
@@ -64,12 +64,20 @@
                 <p class="info__size-text">Размер:</p>
 
                 <div class="info__size size">
-                    <div class="size__b-size">S
-                    </div>
-                    <div class="size__b-size" onclick="size__b-size_red">M
-                    </div>
-                    <div class="size__b-size">L
-                    </div>
+                    <label class="size__label1">
+                        <input class="size__inp" type="radio">
+                        <div class="size__b-size">S</div>
+                    </label>
+                    <label class="size__label2">
+                        <input checked="checked" class="size__inp" type="radio">
+                        <div class="size__b-size">M</div>
+                    </label>
+                    <label class="size__label3">
+                        <input class="size__inp" type="radio">
+                        <div class="size__b-size">L</div>
+                    </label>
+
+
                 </div>
 
                 <p class="info__color-text">Цвет:</p>
@@ -85,78 +93,71 @@
                     <a href="#" class="info__buy_btn">Купить</a>
                 </div>
                 <div class="info__heart heart">
-                    <img class="heart__img" src="img/heart.svg">
-                    <a href="#" class="heart__defer">Отложить на потом</a>
+                    <img class="heart__img icon" src="img/heart.svg">
+                    <a href="#" class="heart__defer defer">Отложить на потом</a>
                 </div>
 
             </div>
         </div>
     </div>
-
-    <div class="footer footer__page">
-        <div class="footer__service service">
-            <h3 class="service__header">
-                Сервис и поддержка
-            </h3>
-            <div class="service__part">
-                <a href="#" class="service__link">
-                    Как сделать заказ <br> Возврат товара <br> Публичная оферта <br> Доставка<br>
-                </a>
-                <a href="#" class="service__link">
-                    Способы оплаты<br> Правила продажи <br>Возврат денежных средств<br> Вопросы
-                </a>
-            </div>
-        </div>
-        <div class="footer__about-us about-us">
-            <h3 class="about-us__header">
-                О компании
-            </h3>
-            <div class="about-us__part">
-                <a href="#" class="about-us__link">
-                    О нас <br> Контакты <br> Вакансии <br> Партнерам
-                </a>
-                <a href="#" class="about-us__link">
-                    Сертификаты <br>Преимущества<br> Наши скидки
-                </a>
-            </div>
-
-        </div>
-        <div class="footer__info info">
-            <div class="info__link link">
-                <div class="info__delivery del">
-                    <img class="del__img" src="img/delivery.svg">
-                    <span class="del__text">бесплатная доставка от 4000 ₽</span>
+    <footer class="footer">
+        <div class="footer__page">
+            <div class="footer__service service">
+                <h3 class="service__header">
+                    Сервис и поддержка
+                </h3>
+                <div class="service__part">
+                    <a href="#" class="service__part_link">
+                        Как сделать заказ <br> Возврат товара <br> Публичная оферта <br> Доставка<br>
+                    </a>
+                    <a href="#" class="service__part_link">
+                        Способы оплаты<br> Правила продажи <br>Возврат денежных средств<br> Вопросы
+                    </a>
                 </div>
-                <div class="link__gift gift">
-                    <img class="gift__img" src="img/heart.svg">
-                    <span class="gift__text">пробники в подарок при каждой покупке</span>
-                </div>
-                <div class="link__promotion prom">
-                    <img class="prom__img" src="img/cup.svg">
-                    <span class="prom__text">акции и подарки за покупку</span>
+            </div>
+            <div class="footer__about-us about-us">
+                <h3 class="about-us__header">
+                    О компании
+                </h3>
+                <div class="about-us__part">
+                    <a href="#" class="about-us__part_link">
+                        О нас <br> Контакты <br> Вакансии <br> Партнерам
+                    </a>
+                    <a href="#" class="about-us__part_link">
+                        Сертификаты <br>Преимущества<br> Наши скидки
+                    </a>
                 </div>
 
             </div>
+            <div class="footer__info info">
+                <div class="info__link link">
+                    <div class="info__delivery del">
+                        <img class="del__img" src="img/delivery.svg">
+                        <span class="del__text">бесплатная доставка от 4000 ₽</span>
+                    </div>
+                    <div class="link__gift gift">
+                        <img class="gift__img" src="img/heart.svg">
+                        <span class="gift__text">пробники в подарок при каждой покупке</span>
+                    </div>
+                    <div class="link__promotion prom">
+                        <img class="prom__img" src="img/cup.svg">
+                        <span class="prom__text">акции и подарки за покупку</span>
+                    </div>
 
+                </div>
+
+            </div>
+            <div class="footer__social social">
+                <a href="#"> <img class="social__icon social__icon_facebook" src="img/facebook.svg"></a>
+                <a href="#"><img class="social__icon social__icon_twitter" src="img/twitter.svg"></a>
+                <a href="#"><img class="social__icon social__icon_instagram" src="img/instagram.svg"></a>
+            </div>
         </div>
-        <div class="footer__social social">
-            <a href="#"> <img class="social__icon social__icon_facebook" src="img/facebook.svg"></a>
-            <a href="#"><img class="social__icon social__icon_twitter" src="img/twitter.svg"></a>
-            <a href="#"><img class="social__icon social__icon_instagram" src="img/instagram.svg"></a>
-
-            <!--<div class="social__icon social__icon_facebook"></div>-->
-            <!--<div class="social__icon social__icon_twitter"></div>-->
-            <!--<div class="social__icon social__icon_instagram"></div>-->
-
-        </div>
-    </div>
-    <hr class="footer__line">
-    <p class="footer__end">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
-        Все права защищены. Доставка по всей России!</p>
-
+            <hr class="footer__line">
+            <p class="footer__end">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
+                Все права защищены. Доставка по всей России!</p>
 
     </footer>
-
 
 </div>
 <script src="js/less.js" type="text/javascript"></script>
