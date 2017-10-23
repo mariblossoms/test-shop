@@ -14,6 +14,7 @@
 @pad: 20px; //100px
 @font_name: 36px;
 @size_button: 40px;
+@tablet-strict_margin: 50px;
 
 html,
 body {
@@ -55,6 +56,14 @@ div {
             max-height: 667px;
         }
     }
+    @media @tablet-strict{
+        .page {
+            max-height: 1024px ;
+             }
+    }
+    @media @large{
+        max-width: 1720px;
+    }
 }
 
 //
@@ -63,11 +72,12 @@ div {
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 16px;
     font-weight: bold;
     color: @color_red;
     width: 100%;
-    padding: 15px 0px;
+    padding: 15px 0 10px 0;
 
     &__number {
         text-align: left;
@@ -81,21 +91,17 @@ div {
         height: auto;
 
     }
+
     &__phone {
         text-align: right;
         margin-right: 100px;
     }
     @media @phone-strict {
-        font-size: 12px;
+        padding: 10px 0 10px 0;
+        font-size: 14px;
         height: 30%;
         &__phone {
             margin-right: 5%;
-        }
-
-        &__logo {
-            &_img {
-                width: 50%;
-            }
         }
 
         &__number {
@@ -104,11 +110,30 @@ div {
         }
 
     }
+    @media @tablet-strict{
+        font-size: 16px;
+        height: 30%;
+        &__phone {
+            margin-right: @tablet-strict_margin;
+        }
+
+        &__number {
+            width: 20%;
+            margin-left: @tablet-strict_margin;
+        }
+
+    }
 }
 
 //размер логотипа уменьшили
 .logo_img {
     width: 30px;
+    @media @phone-strict {
+        width: 20px ;
+    }
+    @media @tablet-strict{
+        width: 25px;
+    }
 }
 
 //
@@ -137,6 +162,7 @@ div {
     @media @phone-strict {
         display: flex;
         flex-direction: column;
+        margin: 0 0 0 0;
         align-items: flex-start;
         font-size: 12px;
         &__nav {
@@ -147,6 +173,22 @@ div {
         &__search {
             margin-left: 5%;
             margin-bottom: 2%;
+        }
+
+    }
+    @media @tablet-strict {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+
+        &__nav {
+             margin-left:@tablet-strict_margin;
+             width: 300px;
+        }
+
+        &__search {
+            margin-right: @tablet-strict_margin;
+
         }
 
     }
@@ -168,7 +210,7 @@ div {
     height: 20px;
     display: flex;
     align-items: stretch; // растягиваем инпуты по длине блока поиска
-    border: 1px solid #FFFFFF  ;
+    border: 1px solid #FFFFFF;
 }
 
 .search_input {
@@ -184,8 +226,7 @@ div {
     width: 200px - 174px;
     height: auto;
     background-color: @color_white;
-  }
-
+}
 
 ////
 //ХЛЕБНЫЕ крошки
@@ -193,7 +234,7 @@ div {
 
 .breadcrumbs {
     font-size: 16px;
-    margin: 45px 0 0 0;
+    margin: 25px 0 0 0;
     width: 100%;
     text-decoration: none;
     &__list {
@@ -210,7 +251,13 @@ div {
             margin-left: 5%;
         }
     }
-
+    @media @tablet-strict {
+        font-size: 14px;
+        margin: 15px 0 0 0;
+        &__list {
+            margin-left: @tablet-strict_margin;
+        }
+    }
 }
 
 .list__link {
@@ -267,11 +314,20 @@ div {
         }
 
     }
+    @media @tablet-strict {
+        margin:5% @tablet-strict_margin;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &__info {
+           padding-left: 10px;
+        }
 
+    }
 }
 
 // Картинка товара
- .product__img_pict {
+.product__img_pict {
     text-align: center;
     width: 500px; //500px
     height: auto;
@@ -279,12 +335,15 @@ div {
     @media @phone-strict {
         width: 60%;
     }
+    @media @tablet-strict{
+        width: 400px;
+    }
 }
-//// расположение картинки в центре блока
- .product__img{
-     text-align: center;
- }
 
+//// расположение картинки в центре блока
+.product__img {
+    text-align: center;
+}
 
 // Информация о товаре
 .product__info {
@@ -324,7 +383,6 @@ div {
 
 }
 
-
 .size__b-size {
     margin-right: 4px;
     margin-top: 10px;
@@ -335,20 +393,7 @@ div {
     background-color: #fffafb;
     font-size: 28px;
     color: @color_black;
-  //  height: 100%;
-}
-
-.size__inp{
-    display: none;
-}
-.size__label1 input:checked+ .size__b-size,
-.size__label2 input:checked+ .size__b-size,
-.size__label3 input:checked+ .size__b-size {
-    border: 1px solid @color_red ;
-}
-.size__b-size_red {
-    border: 2px solid @color_red;
-
+    //  height: 100%;
 }
 
 .info__color-text {
@@ -362,31 +407,30 @@ div {
     align-items: flex-end;
 }
 
-.color__1 {
+.color__size {
     width: @size_button;
     height: @size_button;
     border: 1px solid silver;
-    background-color: #fffafb;
     margin-top: 10px;
     margin-right: 4px;
 
 }
 
+.color__1 {
+    background-color: #fffafb; // белый
+}
+
 .color__2 {
-    width: @size_button;
-    height: @size_button;
-    border: 1px solid silver;
-    background-color: #e3d95e;
-    margin-right: 4px;
+    background-color: #e3d95e; // желтый
 
 }
 
 .color__3 {
-    width: @size_button;
-    height: @size_button;
-    border: 1px solid silver;
-    background-color: #a5af96;
-    margin-right: 4px;
+    background-color: #a5af96; // зеленый
+}
+
+.color__size_border {
+    border: 1px solid @color_red;
 }
 
 .info__buy {
@@ -438,7 +482,7 @@ div {
     width: 100%;
     background-color: @color_gray;
     //font-size: 6px;
-    &__page{
+    &__page {
         display: flex; // на пк элементы горизонтально
         justify-content: space-between;
 
@@ -449,29 +493,39 @@ div {
 
     }
 
-}
 
+}
 
 ///////задаем размеры блоков внутри page части
 .footer__service {
     width: 300px;
+
 }
 
 .footer__about-us {
     width: 200px;
+    @media @phone-strict {
+        width: 300px;
+    }
 }
 
 .footer__info {
     width: 300px;
 }
+
 ///////////////////////////////////
 
 /////делаем отступы слева и справа у футера
 .footer__service, .footer__end, .footer__line {
     margin-left: 100px;
+    @media @tablet-strict {
+        margin-left: @tablet-strict_margin;
+
+    }
 
 }
-.footer__service, .footer__end, .footer__line,.footer__about-us, .footer__info, .footer__social  {
+
+.footer__service, .footer__end, .footer__line, .footer__about-us, .footer__info, .footer__social {
     @media @phone-strict {
         margin-left: 20px;
     }
@@ -481,6 +535,10 @@ div {
     margin-right: 100px;
     @media @phone-strict {
         margin-right: 20px;
+    }
+    @media @tablet-strict {
+        margin-right: @tablet-strict_margin;
+
     }
 }
 
@@ -522,11 +580,12 @@ div {
 
 // Задаем параметры расположения блоков содержания Сервис и поддержка
 // О компании
-.service__part, .about-us__part{
+.service__part, .about-us__part {
     display: flex;
     justify-content: space-between;
 
 }
+
 /// для блока с кнопками соц сетей делаем вертикально на пк
 /// на малых экранах горизонтально
 .footer__social {
@@ -569,11 +628,24 @@ div {
     margin-bottom: 2px;
 }
 
-.del__text, .gift__text, .prom__text {
-    margin-left: 5px;
-    height: 20px;
+.link__gift{
+    padding-left: 10px;
+}
+.link__promotion{
+    padding-left: 13px;
 }
 
+.del__text, .gift__text, .prom__text {
+    margin-left: 10px;
+    height: 20px;
+}
+.del__text{
+    padding-left: 4px;
+}
+.prom__text{
+    padding-left: 2px;
+}
+/////////
 .footer__end {
     margin-top: 10px;
     font-size: @font_size_footer;

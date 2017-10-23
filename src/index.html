@@ -62,31 +62,19 @@
                     Производство: Россия</p>
                 <p class="info__price">1500₽</p>
                 <p class="info__size-text">Размер:</p>
-
                 <div class="info__size size">
-                    <label class="size__label1">
-                        <input class="size__inp" type="radio">
-                        <div class="size__b-size">S</div>
-                    </label>
-                    <label class="size__label2">
-                        <input checked="checked" class="size__inp" type="radio">
-                        <div class="size__b-size">M</div>
-                    </label>
-                    <label class="size__label3">
-                        <input class="size__inp" type="radio">
-                        <div class="size__b-size">L</div>
-                    </label>
-
-
+                    <div id ="size_S" class="size__b-size">S</div>
+                    <div id ="size_M" class="size__b-size ">M</div>
+                    <div id ="size_L" class="size__b-size">L</div>
                 </div>
 
                 <p class="info__color-text">Цвет:</p>
                 <div class="info__color color">
-                    <div class="color__1" onclick="changeImg('../img/tshirt_white.jpg')">
+                    <div id="color1" class="color__size color__1 color__size_border" onclick="changeImg('img/tshirt_white.jpg')">
                     </div>
-                    <div class="color__2" onclick="changeImg('../img/tshirt_yellow.jpg')">
+                    <div id="color2" class="color__size color__2" onclick="changeImg('img/tshirt_yellow.jpg')">
                     </div>
-                    <div class="color__3" onclick="changeImg('../img/tshirt_green.jpg')">
+                    <div id="color3" class="color__size color__3" onclick="changeImg('img/tshirt_green.jpg')">
                     </div>
                 </div>
                 <div class="info__buy">
