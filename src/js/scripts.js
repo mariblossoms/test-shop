@@ -9,15 +9,15 @@ less = {
     rootpath: ":/a.com/"
 };
 
-var color_red = 'rgb(204, 0, 0)',
+let color_red = 'rgb(204, 0, 0)',
     color_gray = 'rgb(217, 217, 212)';
 // Функция замены цвета товара
 function changeImg(lin){
-    var img = document.getElementById("img__id");
+    let img = document.getElementById("img__id");
     img.src=lin;
 };
 function ChangeBorder() {
-    var c = document.getElementsByName('check');
+    let c = document.getElementsByName('check');
     console.log(c);
     if(!c[1].checked) c[1].checked=true;// поставить cheked на второй input если он не установлен
 }

@@ -26,30 +26,22 @@
 
 
         <div class="h-menu">
+            <% const menu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
             <nav class="menu">
                 <ul class="menu__list">
-                    <% const menu = ['LISPaaaa', 'OCalm', 'JavaScript', 'Python','PHP']%>
-                    <% menu.forEach(function (item,index) { %>
+                    <% menu.forEach(function(item) { %>
                     <li class="menu__item">
-                        <% let className =''; %>
-                        <% if (index == 0) {%>
-                            <span><%= item %></span>
-                        <%} else {%>
-                        <a href ="#"
-                           class ="menu__link <% = className %>"><%= item%></a>
-
-
-                        <%}%>
+                        <a href="#" class="menu__link"><%= item %></a>
                     </li>
-                    <%});%>
+                    <% }); %>
                 </ul>
             </nav>
             <!--<div class="h-menu__nav nav">-->
-                <!--<a href="#" class="nav__link nav__link_active">LISP </a>-->
-                <!--<a href="#" class="nav__link">OCaml</a>-->
-                <!--<a href="#" class="nav__link">JavaScript</a>-->
-                <!--<a href="#" class="nav__link">Python</a>-->
-                <!--<a href="#" class="nav__link">PHP</a>-->
+            <!--<a href="#" class="nav__link nav__link_active">LISP </a>-->
+            <!--<a href="#" class="nav__link">OCaml</a>-->
+            <!--<a href="#" class="nav__link">JavaScript</a>-->
+            <!--<a href="#" class="nav__link">Python</a>-->
+            <!--<a href="#" class="nav__link">PHP</a>-->
             <!--</div>-->
             <form action="//google.com/search" class="h-menu__search search">
                 <input type="search" class="search_input" placeholder="">
@@ -58,13 +50,27 @@
         </div>
 
         <div class="breadcrumbs">
-            <div class="breadcrumbs__list list">
-                <a href="#" class="list__link">LISP</a>
-                <span class="list__link_slash">/</span>
-                <a href="#" class="list__link">Одежда</a>
-                <span class="list__link_slash">/</span>
-                <a href="#" class="list__link list__link_last">Футболки</a>
+            <% const bread = ['LISP', 'Одежда', 'Футболки'] %>
+            <div class="breadcrumbs-menu">
+                <ul class="breadcrumbs-menu__list">
+                    <% bread.forEach(function (item) { %>
+                    <li class="breadcrumbs-menu__item">
+                        <a href="#" class="breadcrumbs-menu__link"><%= item %></a>
+                        <span class="breadcrumbs-menu__slash">/</span>
+                    </li>
+
+                    <% }) %>
+                </ul>
+
             </div>
+
+            <!--<div class="breadcrumbs__list list">-->
+            <!--<a href="#" class="list__link">LISP</a>-->
+            <!--<span class="list__link_slash">/</span>-->
+            <!--<a href="#" class="list__link">Одежда</a>-->
+            <!--<span class="list__link_slash">/</span>-->
+            <!--<a href="#" class="list__link list__link_last">Футболки</a>-->
+            <!--</div>-->
 
         </div>
 
@@ -81,14 +87,15 @@
                 <p class="info__price">1500₽</p>
                 <p class="info__size-text">Размер:</p>
                 <div class="info__size size">
-                    <div id ="size_S" class="size__b-size">S</div>
-                    <div id ="size_M" class="size__b-size ">M</div>
-                    <div id ="size_L" class="size__b-size">L</div>
+                    <div id="size_S" class="size__b-size">S</div>
+                    <div id="size_M" class="size__b-size ">M</div>
+                    <div id="size_L" class="size__b-size">L</div>
                 </div>
 
                 <p class="info__color-text">Цвет:</p>
                 <div class="info__color color">
-                    <div id="color1" class="color__size color__1 color__size_border" onclick="changeImg('img/tshirt_white.jpg')">
+                    <div id="color1" class="color__size color__1 color__size_border"
+                         onclick="changeImg('img/tshirt_white.jpg')">
                     </div>
                     <div id="color2" class="color__size color__2" onclick="changeImg('img/tshirt_yellow.jpg')">
                     </div>
@@ -112,27 +119,39 @@
                 <h3 class="service__header">
                     Сервис и поддержка
                 </h3>
-                <div class="service__part">
-                    <a href="#" class="service__part_link">
-                        Как сделать заказ <br> Возврат товара <br> Публичная оферта <br> Доставка<br>
-                    </a>
-                    <a href="#" class="service__part_link">
-                        Способы оплаты<br> Правила продажи <br>Возврат денежных средств<br> Вопросы
-                    </a>
+                <% const service = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Доставка',
+                    'Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'] %>
+                <div class="service">
+                    <ul class="service_list">
+                        <% service.forEach(function(item) { %>
+                        <li class="service__item">
+                            <a href="#" class="service__link"><%= item %></a>
+                        </li>
+                        <% }); %>
+                    </ul>
                 </div>
+                <!--<div class="service__part">-->
+                <!--<a href="#" class="service__part_link">-->
+                <!--Как сделать заказ <br> Возврат товара <br> Публичная оферта <br> Доставка<br>-->
+                <!--</a>-->
+                <!--<a href="#" class="service__part_link">-->
+                <!--Способы оплаты<br> Правила продажи <br>Возврат денежных средств<br> Вопросы-->
+                <!--</a>-->
+                <!--</div>-->
             </div>
             <div class="footer__about-us about-us">
                 <h3 class="about-us__header">
                     О компании
                 </h3>
-                <div class="about-us__part">
-                    <a href="#" class="about-us__part_link">
-                        О нас <br> Контакты <br> Вакансии <br> Партнерам
-                    </a>
-                    <a href="#" class="about-us__part_link">
-                        Сертификаты <br>Преимущества<br> Наши скидки
-                    </a>
-                </div>
+            
+                <!--<div class="about-us__part">-->
+                    <!--<a href="#" class="about-us__part_link">-->
+                        <!--О нас <br> Контакты <br> Вакансии <br> Партнерам-->
+                    <!--</a>-->
+                    <!--<a href="#" class="about-us__part_link">-->
+                        <!--Сертификаты <br>Преимущества<br> Наши скидки-->
+                    <!--</a>-->
+                <!--</div>-->
 
             </div>
             <div class="footer__info info">
@@ -159,9 +178,9 @@
                 <a href="#"><img class="social__icon social__icon_instagram" src="img/instagram.svg"></a>
             </div>
         </div>
-            <hr class="footer__line">
-            <p class="footer__end">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
-                Все права защищены. Доставка по всей России!</p>
+        <hr class="footer__line">
+        <p class="footer__end">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
+            Все права защищены. Доставка по всей России!</p>
 
     </footer>
 
