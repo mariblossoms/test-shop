@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
     "dev": "gulp",
-    "prod": "gulp prod"
+    "prod": "gulp prod",
+    "lint": "eslint src && stylelint src/less/main.less",
+    "precommit": "npm run lint"
   },
   "author": "Andrey Miskov",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "gulp-ejs": "^3.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
+    "husky": "^0.14.3",
     "stylelint": "^7.13.0"
   },
   "dependencies": {
@@ -25,6 +28,7 @@
     "gulp-less": "^3.3.0",
     "install": "^0.10.1",
     "jquery": "^3.2.1",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "stylint": "^1.5.9"
   }
 }

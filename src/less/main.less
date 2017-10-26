@@ -9,8 +9,8 @@
 @color_white: rgb(255, 255, 255);
 @color_black: rgb(0, 0, 0);
 @font_size_footer: 12px;
-@font_default: "Roboto";
-@font_tel: "Consolas";
+@font_default: 'Roboto';
+@font_tel: 'Consolas';
 @pad: 20px; //100px
 @font_name: 36px;
 @size_button: 40px;
@@ -24,7 +24,6 @@ body {
 }
 
 //.header, .h-menu, .breadcrumbs,.product, .footer {display: block}
-
 a {
     text-decoration: none;
 }
@@ -38,7 +37,7 @@ div {
 }
 
 .content {
-    padding-bottom: 80px;
+    padding-bottom: 50px;
 }
 
 .page {
@@ -78,7 +77,7 @@ div {
     font-weight: bold;
     color: @color_red;
     width: 100%;
-    padding: 15px 0 10px 0;
+    padding: 15px 0 10px;
 
     &__number {
         text-align: left;
@@ -86,11 +85,11 @@ div {
         width: 100px;
         margin-left: 100px;
     }
+
     &__logo {
         text-align: center;
         width: 35px;
         height: auto;
-
     }
 
     &__phone {
@@ -98,9 +97,10 @@ div {
         margin-right: 100px;
     }
     @media @phone-strict {
-        padding: 10px 0 10px 0;
+        padding: 10px 0;
         font-size: 12px;
         height: 30%;
+
         &__phone {
             margin-right: 5%;
         }
@@ -109,11 +109,11 @@ div {
             width: 20%;
             margin-left: 5%;
         }
-
     }
     @media @tablet-strict {
         font-size: 16px;
         height: 30%;
+
         &__phone {
             margin-right: @tablet-strict_margin;
         }
@@ -122,16 +122,14 @@ div {
             width: 20%;
             margin-left: @tablet-strict_margin;
         }
-
     }
-
 }
 
 //размер логотипа уменьшили
 .logo_img {
     width: 30px;
     @media @phone-strict {
-        width: 20px ;
+        width: 20px;
     }
     @media @tablet-strict {
         width: 25px;
@@ -147,26 +145,26 @@ div {
     align-items: center;
     font-size: 16px;
     line-height: 1;
-    margin: 5px 0 0 0;
+    margin: 5px 0 0;
     background-color: @color_gray;
     width: 100%;
-    //&__menu {
-    //    width: 350px;
-    //    text-align: left;
-    //    font-family: @font_default;
-    //    margin-left: 100px;
-    //    padding: 10px 0px;
-    //}
+
     &__search {
         margin-right: 100px;
+        width: 200px;
+        height: 20px;
+        display: flex;
+        align-items: stretch; // растягиваем инпуты по длине блока поиска
+        border: 1px solid #FFF;
     }
 
     @media @phone-strict {
         display: flex;
         flex-direction: column;
-        margin: 0 0 0 0;
+        margin: 0;
         align-items: flex-start;
         font-size: 12px;
+
         &__nav {
             margin-left: 5%;
             width: 300px;
@@ -176,8 +174,8 @@ div {
             margin-left: 5%;
             margin-bottom: 2%;
         }
-
     }
+
     @media @tablet-strict {
         font-size: 14px;
         display: flex;
@@ -190,9 +188,7 @@ div {
 
         &__search {
             margin-right: @tablet-strict_margin;
-
         }
-
     }
 }
 
@@ -201,12 +197,14 @@ div {
     text-align: left;
     font-family: @font_default;
     margin-left: 100px;
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
+
     &__list {
         display: flex;
         flex-direction: row;
         list-style-type: none;
     }
+
     &__item {
         margin-right: 15px;
     }
@@ -218,21 +216,12 @@ div {
     }
 }
 
-.h-menu__search {
-    width: 200px;
-    height: 20px;
-    display: flex;
-    align-items: stretch; // растягиваем инпуты по длине блока поиска
-    border: 1px solid #FFFFFF;
-}
-
 .search_input {
     border: none;
     outline: none;
-    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    //-webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
     width: 174px; /* Ширина поля */
     vertical-align: middle;
-
 }
 
 .search_img {
@@ -244,26 +233,24 @@ div {
 ////
 //ХЛЕБНЫЕ крошки
 //
-
 .breadcrumbs {
     margin-left: 100px;
     font-size: 16px;
-    padding: 25px 0 0 0;
+    padding: 25px 0 0;
     width: 100%;
-    &__list {
-
-    }
     @media @phone-strict {
         font-size: 12px;
-        margin: 10px 0 0 0;
-        padding: 0 0 0 0;
+        margin: 10px 0 0;
+        padding: 0;
+
         &__list {
             margin-left: 5%;
         }
     }
     @media @tablet-strict {
         font-size: 14px;
-        margin: 15px 0 0 0;
+        margin: 15px 0 0;
+
         &__list {
             margin-left: @tablet-strict_margin;
         }
@@ -275,8 +262,8 @@ div {
         display: flex;
         flex-direction: row;
         list-style-type: none;
-
     }
+
     &__item {
         margin-right: 5px;
     }
@@ -288,23 +275,24 @@ div {
     }
 }
 
-.menu__link, .breadcrumbs-menu__link {
+.menu__link .breadcrumbs-menu__link {
     color: @color_red;
-
     text-decoration: underline;
+
     &_active {
         color: @color_black;
         text-decoration: none;
-
     }
 }
 
 .list__link {
     color: @color_red;
     text-decoration: underline;
+
     &_slash {
         color: @color_black;
     }
+
     &_last {
         color: @color_black;
         text-decoration: none;
@@ -317,52 +305,49 @@ div {
 //
 //КАРТИНКА ПРОДУКТА
 //
-
 .product {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     margin: 30px 0 0 100px;
-    &__img {
-        // background-size: cover ;
-        //float: left;
 
+    &__img {
+        text-align: center; //// расположение картинки в центре блока
     }
+
     &__info {
-        // float: right;
+        font-family: @font_default;
         padding-left: 30px;
         //margin-left: 5%;
-        &__composition {
 
-        }
         &__size__b-size {
             width: 30px;
             max-width: 100px;
-
         }
     }
     @media @phone-strict {
-        margin: 5% 5% 5% 5%;
+        margin: 5%;
         display: flex;
         flex-direction: column;
         align-items: center;
+
         &__info {
             display: block;
-            padding-left: 0px;
+            padding-left: 0;
             margin-top: 10px;
             //  background-color: aquamarine;
         }
-
     }
+
     @media @tablet-strict {
         margin: 5% @tablet-strict_margin;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
         &__info {
             padding-left: 10px;
         }
-
     }
 }
 
@@ -378,16 +363,6 @@ div {
     @media @tablet-strict {
         width: 400px;
     }
-}
-
-//// расположение картинки в центре блока
-.product__img {
-    text-align: center;
-}
-
-// Информация о товаре
-.product__info {
-    font-family: @font_default;
 }
 
 .info__name {
@@ -420,7 +395,6 @@ div {
 
 .info__size {
     display: flex;
-
 }
 
 .size__b-size {
@@ -453,7 +427,6 @@ div {
     border: 1.5px solid silver;
     margin-top: 10px;
     margin-right: 4px;
-
 }
 
 .color__1 {
@@ -462,14 +435,13 @@ div {
 
 .color__2 {
     background-color: #e3d95e; // желтый
-
 }
 
 .color__3 {
     background-color: #a5af96; // зеленый
 }
 
-.color__size_border, .size__b-size_border {
+.color__size_border .size__b-size_border {
     border: 1.5px solid @color_red;
 }
 
@@ -499,6 +471,7 @@ div {
     display: flex;
     //justify-content: flex-start;
     align-items: center;
+
     &__defer {
         padding-left: 20px;
     }
@@ -517,38 +490,31 @@ div {
 //
 //FOOTER
 //
-
 .footer {
     width: 100%;
     background-color: @color_gray;
+
     &__page {
         display: flex; // на пк элементы горизонтально
         justify-content: space-between;
+        padding-bottom: 20px;
 
         @media @phone-strict {
             flex-direction: column; // на телефоне элементы вертикально
             align-items: stretch;
         }
-
     }
-
 }
 
 ///////задаем размеры блоков внутри page части
-.footer__page, .service__block{
-  //  height: 150px;
-}
-.service__block{
-
-}
 .footer__service {
     width: 300px;
 }
 
 .footer__about-us {
-    width: 200px;
+    width: 300px;
     @media @phone-strict {
-        width: 300px;
+        width: 250px;
     }
 }
 
@@ -559,34 +525,41 @@ div {
 ///////////////////////////////////
 
 /////делаем отступы слева и справа у футера
-.footer__service, .footer__end, .footer__line {
+.footer__service,
+.footer__end,
+.footer__line {
     margin-left: 100px;
     @media @tablet-strict {
         margin-left: @tablet-strict_margin;
-
     }
-
 }
 
-.footer__service, .footer__end, .footer__line, .footer__about-us, .footer__info, .footer__social {
+.footer__service,
+.footer__end,
+.footer__line,
+.footer__about-us,
+.footer__info,
+.footer__social {
     @media @phone-strict {
         margin-left: 20px;
     }
 }
 
-.footer__social, .footer__end, .footer__line {
+.footer__social,
+.footer__end,
+.footer__line {
     margin-right: 100px;
     @media @phone-strict {
         margin-right: 20px;
     }
     @media @tablet-strict {
         margin-right: @tablet-strict_margin;
-
     }
 }
 
 /////////////////////////
-.service__header, .about-us__header {
+.service__header,
+.about-us__header {
     color: @color_black;
     font-weight: bold;
     font-size: @font_size_footer;
@@ -599,18 +572,41 @@ div {
     }
 }
 
-
-
-.footer__service, .footer__about-us, .footer__info, .footer__social {
-    margin-top: 20px;
-
+.footer__service,
+.footer__about-us {
+    margin-top: 30px;
 }
 
-.block__item, .part__item{
+.footer__info,
+.footer__social{
+    margin-top: 30px;
+}
+
+.info__link,
+.footer__social{
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.block__list,
+.part__list {
+    column-count: 2;
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.block__item,
+.part__item {
     list-style-type: none;
 }
 
-.block__link, .part__link, .del__text, .gift__text, .prom__text {
+.block__link,
+.part__link,
+.del__text,
+.gift__text,
+.prom__text {
     font-size: @font_size_footer;
     color: @color_black;
     text-align: left;
@@ -620,13 +616,6 @@ div {
     width: 20px;
 }
 
-// Задаем параметры расположения блоков содержания Сервис и поддержка
-// О компании
-//.service__block, .about-us__part {
-//    display: flex;
-//    justify-content: space-between;
-//
-//}
 
 /// для блока с кнопками соц сетей делаем вертикально на пк
 /// на малых экранах горизонтально
@@ -636,6 +625,7 @@ div {
     @media @phone-strict {
         flex-direction: row;
         justify-content: space-around;
+        height: 30px;
     }
 }
 
@@ -678,7 +668,9 @@ div {
     padding-left: 13px;
 }
 
-.del__text, .gift__text, .prom__text {
+.del__text,
+.gift__text,
+.prom__text {
     margin-left: 10px;
     height: 20px;
 }
@@ -696,14 +688,8 @@ div {
     margin-top: 10px;
     font-size: @font_size_footer;
     padding-bottom: 20px;
-
 }
 
 .footer__line {
-    opacity: 0.5;
+    opacity: .5;
 }
-
-
-
-
-
