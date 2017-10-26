@@ -208,6 +208,10 @@ div {
     &__item {
         margin-right: 15px;
     }
+
+    &__link{
+        color: @color_red;
+    }
 }
 
 @media @phone-strict {
@@ -266,6 +270,10 @@ div {
 
     &__item {
         margin-right: 5px;
+    }
+
+    &__link{
+        color: @color_red;
     }
 }
 
@@ -441,7 +449,8 @@ div {
     background-color: #a5af96; // зеленый
 }
 
-.color__size_border .size__b-size_border {
+.color__size_border,
+.size__b-size_border {
     border: 1.5px solid @color_red;
 }
 
@@ -579,7 +588,7 @@ div {
 
 .footer__info,
 .footer__social{
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .info__link,

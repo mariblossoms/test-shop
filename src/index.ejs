@@ -53,10 +53,12 @@
             <% const bread = ['LISP', 'Одежда', 'Футболки'] %>
             <div class="breadcrumbs-menu">
                 <ul class="breadcrumbs-menu__list">
-                    <% bread.forEach(function (item) { %>
+                    <% bread.forEach(function (item, index) { %>
                     <li class="breadcrumbs-menu__item">
                         <a href="#" class="breadcrumbs-menu__link"><%= item %></a>
+                        <% if(index < (bread.length -1)) { %>
                         <span class="breadcrumbs-menu__slash">/</span>
+                        <% } %>
                     </li>
 
                     <% }) %>

@@ -8,10 +8,6 @@ function changeImg (lin) {
 
 }
 
-document.getElementById('color1').addEventListener('click', changeImg);
-document.getElementById('color2').addEventListener('click', changeImg);
-document.getElementById('color3').addEventListener('click', changeImg);
-
 // Color variable
 function onclick1() {
     document.getElementById('color1').style.borderColor = color_red;
@@ -31,9 +27,9 @@ function onclick3() {
     document.getElementById('color3').style.borderColor = color_red;
 }
 
-document.getElementById('color1').addEventListener('click', onclick1);
-document.getElementById('color2').addEventListener('click', onclick2);
-document.getElementById('color3').addEventListener('click', onclick3);
+document.getElementById('color1').addEventListener('click', onclick1, changeImg);
+document.getElementById('color2').addEventListener('click', onclick2, changeImg);
+document.getElementById('color3').addEventListener('click', onclick3, changeImg);
 
 
 // Size variable
