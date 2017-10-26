@@ -212,6 +212,12 @@ div {
     }
 }
 
+@media @phone-strict {
+    .menu {
+        margin-left: 5%;
+    }
+}
+
 .h-menu__search {
     width: 200px;
     height: 20px;
@@ -250,6 +256,7 @@ div {
     @media @phone-strict {
         font-size: 12px;
         margin: 10px 0 0 0;
+        padding: 0 0 0 0;
         &__list {
             margin-left: 5%;
         }
@@ -272,6 +279,12 @@ div {
     }
     &__item {
         margin-right: 5px;
+    }
+}
+
+@media @phone-strict {
+    .breadcrumbs-menu {
+        margin-left: 5%;
     }
 }
 
@@ -318,6 +331,7 @@ div {
     &__info {
         // float: right;
         padding-left: 30px;
+        //margin-left: 5%;
         &__composition {
 
         }
@@ -415,7 +429,7 @@ div {
     width: @size_button;
     height: @size_button;
     text-align: center;
-    border: 1px solid silver;
+    border: 1.5px solid silver;
     background-color: #fffafb;
     font-size: 28px;
     color: @color_black;
@@ -436,7 +450,7 @@ div {
 .color__size {
     width: @size_button;
     height: @size_button;
-    border: 1px solid silver;
+    border: 1.5px solid silver;
     margin-top: 10px;
     margin-right: 4px;
 
@@ -455,8 +469,8 @@ div {
     background-color: #a5af96; // зеленый
 }
 
-.color__size_border {
-    border: 1px solid @color_red;
+.color__size_border, .size__b-size_border {
+    border: 1.5px solid @color_red;
 }
 
 .info__buy {
@@ -466,7 +480,7 @@ div {
     border: 1px solid @color_red;
     background-color: @color_red;
     @media @phone-strict {
-        width: @size_button*8;
+        width: @size_button*7;
         height: @size_button;
     }
 }
@@ -501,13 +515,12 @@ div {
 }
 
 //
-//Футер
+//FOOTER
 //
 
 .footer {
     width: 100%;
     background-color: @color_gray;
-    //font-size: 6px;
     &__page {
         display: flex; // на пк элементы горизонтально
         justify-content: space-between;
@@ -522,9 +535,14 @@ div {
 }
 
 ///////задаем размеры блоков внутри page части
+.footer__page, .service__block{
+  //  height: 150px;
+}
+.service__block{
+
+}
 .footer__service {
     width: 300px;
-
 }
 
 .footer__about-us {
@@ -581,19 +599,18 @@ div {
     }
 }
 
-.service__part_link, .about-us__part_link {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
 
-}
 
 .footer__service, .footer__about-us, .footer__info, .footer__social {
     margin-top: 20px;
 
 }
 
-.service__part_link, .about-us__part_link, .del__text, .gift__text, .prom__text {
+.block__item, .part__item{
+    list-style-type: none;
+}
+
+.block__link, .part__link, .del__text, .gift__text, .prom__text {
     font-size: @font_size_footer;
     color: @color_black;
     text-align: left;
@@ -605,11 +622,11 @@ div {
 
 // Задаем параметры расположения блоков содержания Сервис и поддержка
 // О компании
-.service__part, .about-us__part {
-    display: flex;
-    justify-content: space-between;
-
-}
+//.service__block, .about-us__part {
+//    display: flex;
+//    justify-content: space-between;
+//
+//}
 
 /// для блока с кнопками соц сетей делаем вертикально на пк
 /// на малых экранах горизонтально

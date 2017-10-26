@@ -29,7 +29,7 @@
             <% const menu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
             <nav class="menu">
                 <ul class="menu__list">
-                    <% menu.forEach(function(item) { %>
+                    <% menu.forEach(function(item, i) { %>
                     <li class="menu__item">
                         <a href="#" class="menu__link"><%= item %></a>
                     </li>
@@ -88,7 +88,7 @@
                 <p class="info__size-text">Размер:</p>
                 <div class="info__size size">
                     <div id="size_S" class="size__b-size">S</div>
-                    <div id="size_M" class="size__b-size ">M</div>
+                    <div id="size_M" class="size__b-size size__b-size_border">M</div>
                     <div id="size_L" class="size__b-size">L</div>
                 </div>
 
@@ -121,11 +121,11 @@
                 </h3>
                 <% const service = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Доставка',
                     'Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'] %>
-                <div class="service">
-                    <ul class="service_list">
+                <div class="service__block block">
+                    <ul class="block__list">
                         <% service.forEach(function(item) { %>
-                        <li class="service__item">
-                            <a href="#" class="service__link"><%= item %></a>
+                        <li class="block__item">
+                            <a href="#" class="block__link"><%= item %></a>
                         </li>
                         <% }); %>
                     </ul>
@@ -143,7 +143,18 @@
                 <h3 class="about-us__header">
                     О компании
                 </h3>
-            
+                <% const about = ['О нас', 'Контакты', 'Вакансии', 'Партнерам',
+                    'Сертификаты', 'Преимущества', 'Наши скидки'] %>
+                <div class="about-us__part part">
+                    <ul class="part__list">
+                        <% service.forEach(function(item) { %>
+                        <li class="part__item">
+                            <a href="#" class="part__link"><%= item %></a>
+                        </li>
+                        <% }); %>
+                    </ul>
+                </div>
+
                 <!--<div class="about-us__part">-->
                     <!--<a href="#" class="about-us__part_link">-->
                         <!--О нас <br> Контакты <br> Вакансии <br> Партнерам-->
