@@ -26,16 +26,6 @@ gulp.task('livereload', () => {
     });
 });
 
-gulp.task('less', function () {
-    gulp.src('src/less/*.less')
-        .pipe(sourcemaps.init())
-        .pipe(less())
-        .pipe(sourcemaps.write({includeContent: false, sourceRoot: '.'}))
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./dist/css'));
-});
-
 gulp.task('styles', () => {
     gulp.src('src/less/main.less')
         .pipe(sourcemaps.init())
