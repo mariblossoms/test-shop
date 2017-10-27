@@ -54,3 +54,4 @@ function size_onclick3() {
 document.getElementById('size_S').addEventListener('click', size_onclick1);
 document.getElementById('size_M').addEventListener('click', size_onclick2);
 document.getElementById('size_L').addEventListener('click', size_onclick3);
+

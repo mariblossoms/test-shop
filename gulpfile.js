@@ -1,10 +1,14 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
+const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
 const autoprefixer = require('gulp-autoprefixer');
 const rename       = require('gulp-rename');
 const ejs          = require('gulp-ejs');
 const gutil        = require('gulp-util');
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
+//const path         = require('path');
 
 // Автоперезагрузка при изменении файлов в папке `dist`:
 // Принцип: меняем файлы в `/src`, они обрабатываются и переносятся в `dist` и срабатывает автоперезагрузка.
@@ -22,15 +26,33 @@ gulp.task('livereload', () => {
     });
 });
 
+gulp.task('less', function () {
+    gulp.src('src/less/*.less')
+        .pipe(sourcemaps.init())
+        .pipe(less())
+        .pipe(sourcemaps.write({includeContent: false, sourceRoot: '.'}))
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./dist/css'));
+});
+
 gulp.task('styles', () => {
     gulp.src('src/less/main.less')
+        .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(autoprefixer())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
+        .pipe(imagemin({
+            ogressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()],
+            interlaced: true
+        }))
         .pipe(gulp.dest('./dist/img'));
 });
 

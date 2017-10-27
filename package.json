@@ -25,7 +25,11 @@
   },
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.4.0",
     "gulp-less": "^3.3.0",
+    "gulp-less-sourcemap": "^1.4.3",
+    "gulp-sourcemaps": "^2.6.1",
+    "imagemin-pngquant": "^5.0.1",
     "install": "^0.10.1",
     "jquery": "^3.2.1",
     "normalize.css": "^7.0.0",

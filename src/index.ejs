@@ -27,7 +27,7 @@
 
         <div class="h-menu">
             <% const menu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
-            <nav class="menu">
+            <div class="menu">
                 <ul class="menu__list">
                     <% menu.forEach(function(item, i) { %>
                     <li class="menu__item">
@@ -35,14 +35,7 @@
                     </li>
                     <% }); %>
                 </ul>
-            </nav>
-            <!--<div class="h-menu__nav nav">-->
-            <!--<a href="#" class="nav__link nav__link_active">LISP </a>-->
-            <!--<a href="#" class="nav__link">OCaml</a>-->
-            <!--<a href="#" class="nav__link">JavaScript</a>-->
-            <!--<a href="#" class="nav__link">Python</a>-->
-            <!--<a href="#" class="nav__link">PHP</a>-->
-            <!--</div>-->
+            </div>
             <form action="//google.com/search" class="h-menu__search search">
                 <input type="search" class="search_input" placeholder="">
                 <input type="image" class="search_img" src="img/search.svg">
@@ -66,15 +59,7 @@
 
             </div>
 
-            <!--<div class="breadcrumbs__list list">-->
-            <!--<a href="#" class="list__link">LISP</a>-->
-            <!--<span class="list__link_slash">/</span>-->
-            <!--<a href="#" class="list__link">Одежда</a>-->
-            <!--<span class="list__link_slash">/</span>-->
-            <!--<a href="#" class="list__link list__link_last">Футболки</a>-->
-            <!--</div>-->
-
-        </div>
+         </div>
 
         <div class="product">
             <div class="product__img">
@@ -88,18 +73,6 @@
                 <p class="info__price">1500₽</p>
                 <p class="info__size-text">Размер:</p>
                 <div class="info__size size">
-                    <!--<% const sizes = ['S', 'M', 'L'] %>-->
-                         <!--<ul class="breadcrumbs-menu__list">-->
-                            <!--<% bread.forEach(function (item) { %>-->
-                            <!--<li class="breadcrumbs-menu__item">-->
-                                <!--<a href="#" class="breadcrumbs-menu__link"><%= item %></a>-->
-                                <!--<span class="breadcrumbs-menu__slash">/</span>-->
-                            <!--</li>-->
-
-                            <!--<% }) %>-->
-                        <!--</ul>-->
-
-
                     <div id="size_S" class="size__b-size">S</div>
                     <div id="size_M" class="size__b-size size__b-size_border">M</div>
                     <div id="size_L" class="size__b-size">L</div>
@@ -143,15 +116,7 @@
                         <% }); %>
                     </ul>
                 </div>
-                <!--<div class="service__part">-->
-                <!--<a href="#" class="service__part_link">-->
-                <!--Как сделать заказ <br> Возврат товара <br> Публичная оферта <br> Доставка<br>-->
-                <!--</a>-->
-                <!--<a href="#" class="service__part_link">-->
-                <!--Способы оплаты<br> Правила продажи <br>Возврат денежных средств<br> Вопросы-->
-                <!--</a>-->
-                <!--</div>-->
-            </div>
+             </div>
             <div class="footer__about-us about-us">
                 <h3 class="about-us__header">
                     О компании
@@ -167,16 +132,6 @@
                         <% }); %>
                     </ul>
                 </div>
-
-                <!--<div class="about-us__part">-->
-                <!--<a href="#" class="about-us__part_link">-->
-                <!--О нас <br> Контакты <br> Вакансии <br> Партнерам-->
-                <!--</a>-->
-                <!--<a href="#" class="about-us__part_link">-->
-                <!--Сертификаты <br>Преимущества<br> Наши скидки-->
-                <!--</a>-->
-                <!--</div>-->
-
             </div>
             <div class="footer__info info">
                 <div class="info__link link">
