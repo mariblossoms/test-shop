@@ -38,7 +38,7 @@ gulp.task('styles', () => {
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
         .pipe(imagemin({
-            ogressive: true,
+            progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()],
             interlaced: true
