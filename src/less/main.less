@@ -47,19 +47,20 @@ div {
     height: 1473px;
     max-width: 1920px;
     font-family: @font_default;
-    position: relative;
-    //height: 100%;
-    //height: 1024px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     @media @phone-strict {
+        width: 375px;
+
         .page {
             max-height: 667px;
         }
     }
     @media @tablet-strict {
+        width: 768px;
+
         .page {
             max-height: 1024px;
         }
@@ -109,12 +110,13 @@ div {
         height: 30%;
 
         &__phone {
-            margin-right: 5%;
+            margin-right: 10px;
+            font-size: 12px;
         }
 
         &__number {
-            width: 20%;
-            margin-left: 5%;
+            width: 55px;
+            margin-left: 10px;
         }
     }
     @media @tablet-strict {
@@ -156,7 +158,8 @@ div {
     background-color: @background_ftr_hdr;
     width: 100%;
     height: 53px;
-    border: 1px solid @color_line;
+    border-bottom: 1px solid @color_line;
+    border-top: 1px solid @color_line;
 
     &__search {
         margin-right: 100px;
@@ -170,13 +173,15 @@ div {
     @media @phone-strict {
         display: flex;
         flex-direction: column;
-        margin: 0;
         align-items: flex-start;
         font-size: 12px;
+        height: 60px;
 
         &__search {
-            margin-left: 5%;
-            margin-bottom: 2%;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            width: 280px * .7;
+            height: 40px * .5;
         }
     }
 
@@ -198,7 +203,7 @@ div {
     margin-left: 100px;
     padding: 10px 0;
     @media @phone-strict {
-        margin-left: 5%;
+        margin-left: 10px;
     }
     @media @tablet-strict {
         margin-left: @tablet-strict_margin;
@@ -251,11 +256,11 @@ div {
     width: 100%;
     @media @phone-strict {
         font-size: 12px;
-        margin: 10px 0 0;
-        padding: 0;
+        margin-left: -5px;
+        padding: 10px 0;
 
         &__list {
-            margin-left: 5%;
+            //margin-left: 10px;
         }
     }
     @media @tablet-strict {
@@ -315,10 +320,15 @@ div {
         margin-top: -10px;
     }
     @media @phone-strict {
-        margin: 5%;
+        margin: 10px 0 0 10px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+
+        &__img {
+            //margin-left: 10px;
+            text-align: left; //// расположение картинки в центре блока
+        }
 
         &__info {
             display: block;
@@ -347,6 +357,7 @@ div {
     height: 698px;
     @media @phone-strict {
         width: 60%;
+        height: auto;
     }
     @media @tablet-strict {
         width: 400px;
@@ -360,6 +371,12 @@ div {
     text-align: left;
     letter-spacing: .4px;
     // position: relative;
+    @media @phone-strict {
+        font-size: 20px;
+    }
+    @media @tablet-strict {
+        font-size: 24px;
+    }
 }
 
 .info__composition {
@@ -370,6 +387,13 @@ div {
     letter-spacing: .2px;
     width: 622px;
     height: 32px;
+    @media @phone-strict {
+        font-size: 12px;
+        width: 300px;
+    }
+    @media @tablet-strict {
+        font-size: 12px;
+    }
 }
 
 .info__price {
@@ -378,12 +402,26 @@ div {
     color: @color_red;
     font-size: 36px;
     letter-spacing: .2px;
+    @media @phone-strict {
+        padding-top: 10px;
+        font-size: 28px;
+    }
+    @media @tablet-strict {
+        font-size: 12px;
+    }
 }
 
 .info__size-text {
     padding: 19px 2px 0;
     color: @color_black;
     font-size: 16px;
+    @media @phone-strict {
+        padding-top: 10px;
+        font-size: 12px;
+    }
+    @media @tablet-strict {
+        font-size: 12px;
+    }
 }
 
 .info__size {
@@ -404,12 +442,28 @@ div {
     color: @color_black;
     list-style-type: none;
     //  height: 100%;
+    @media @phone-strict {
+        width: 37px;
+        height: 37px;
+        padding-top: 0;
+        font-size: 28px;
+    }
+    @media @tablet-strict {
+        font-size: 12px;
+    }
 }
 
 .info__color-text {
     padding: 31px 2px 0;
     color: @color_black;
     font-size: 16px;
+    @media @phone-strict {
+        padding-top: 10px;
+        font-size: 12px;
+    }
+    @media @tablet-strict {
+        font-size: 12px;
+    }
 }
 
 .info__color {
@@ -425,6 +479,15 @@ div {
     height: @size_button - 2px;
     border: 1px solid @color_black;
     list-style-type: none;
+    @media @phone-strict {
+        width: 37px;
+        height: 37px;
+        padding-top: 0;
+        font-size: 28px;
+    }
+    @media @tablet-strict {
+        font-size: 12px;
+    }
 }
 
 .color__1 {
@@ -455,8 +518,9 @@ div {
     font-size: 30px;
     letter-spacing: .7px;
     @media @phone-strict {
-        width: @size_button*7;
-        height: @size_button;
+        width: 37px * 9;
+        height: 37px;
+        font-size: 24px;
     }
 }
 
@@ -507,6 +571,8 @@ div {
         padding-bottom: 20px;
 
         @media @phone-strict {
+            width: 375px;
+            height: auto;
             flex-direction: column; // на телефоне элементы вертикально
             align-items: stretch;
         }
@@ -522,12 +588,15 @@ div {
     margin-left: -15px;
     width: 320px;
     @media @phone-strict {
-        width: 250px;
+        width: 280px;
     }
 }
 
 .footer__info {
     width: 400px;
+    @media @phone-strict {
+        width: 360px;
+    }
 }
 
 ///////////////////////////////////
@@ -581,16 +650,18 @@ div {
 .footer__service,
 .footer__about-us {
     margin-top: 55px;
+    line-height: 1.5;
 }
 
 .footer__info,
 .footer__social{
+    line-height: 2;
     margin-top: 70px;
 }
 
 .info__link,
 .footer__social{
-    height: 80px;
+    height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -664,18 +735,24 @@ div {
 //////////
 
 //////выравнивание трертьей колонки с иконками
+.info__link{
+    padding-left: 20px;
+    @media @phone-strict {
+        padding-left: 0;
+    }
+}
+
 .info__delivery {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 2px;
 }
 
 .link__gift {
-    padding-left: 10px;
+    padding-left: 18px;
 }
 
 .link__promotion {
-    padding-left: 13px;
+    padding-left: 22px;
 }
 
 .del__text,
@@ -687,6 +764,11 @@ div {
 
 .del__text {
     padding-left: 4px;
+    margin-top: -2px;
+}
+
+.gift__text{
+    margin-top: -5px;
 }
 
 .prom__text {
@@ -695,12 +777,21 @@ div {
 
 /////////
 .footer__end {
-    margin-top: 10px;
-    font-size: @font_size_footer;
+    font-size: 14px;
+    margin-top: 25px;
     padding-bottom: 20px;
+    line-height: 2;
+    @media @phone-strict {
+        width: 375px;
+    }
 }
 
 .footer__line {
-    margin-top: 35px;
+    margin-top: 18px;
+    color: @color_black;
     opacity: .5;
+    @media @phone-strict {
+        width: 330px;
+    }
 }
+
