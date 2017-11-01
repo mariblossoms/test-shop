@@ -37,8 +37,8 @@
                 </ul>
             </div>
             <form action="//google.com/search" class="h-menu__search search">
-                <input type="search" class="search_input" placeholder="">
-                <input type="image" alt="Поиск" class="search_img" src="img/search.svg">
+                <input type="search" class="search search_input" placeholder="">
+                <input type="image" alt="Поиск" class="search search_img" src="img/search.svg">
             </form>
         </div>
 
@@ -69,7 +69,7 @@
                 <h2 class="info__name">Футболка Alien technology</h2>
                 <p class="info__composition">Состав: 100% хлопок, динамическая типизация, польская нотация.
                     Производство: Россия</p>
-                <p class="info__price">1500<span class="info_rub">₽</span></p>
+                <p class="info__price">1500<span class="info__price_rub">₽</span></p>
                 <p class="info__size-text">Размер:</p>
                 <ul class="info__size size">
                     <li class="size__b-size"
@@ -119,7 +119,7 @@
                 <% const service = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Доставка',
                     'Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'] %>
                 <div class="service__block block">
-                    <ul class="block__list">
+                    <ul class="block__list column-2">
                         <% service.forEach(function(item) { %>
                         <li class="block__item">
                             <a href="#" class="block__link"><%= item %></a>
@@ -135,7 +135,7 @@
                 <% const about = ['О нас', 'Контакты', 'Вакансии', 'Партнерам',
                     'Сертификаты', 'Преимущества', 'Наши скидки'] %>
                 <div class="about-us__part part">
-                    <ul class="part__list">
+                    <ul class="part__list column-2">
                         <% about.forEach(function(item) { %>
                         <li class="part__item">
                             <a href="#" class="part__link"><%= item %></a>
@@ -146,7 +146,7 @@
             </div>
             <div class="footer__info info">
                 <div class="info__link link">
-                    <div class="info__delivery del">
+                    <div class="link__delivery del">
                         <img class="del__img" alt="" src="img/delivery.svg">
                         <span class="del__text">бесплатная доставка от 4000 ₽</span>
                     </div>

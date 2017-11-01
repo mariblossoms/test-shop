@@ -220,7 +220,7 @@ div {
         margin-right: 15px;
     }
 
-    &__link{
+    &__link {
         margin-right: 5px;
         color: @color_red;
         text-decoration: underline;
@@ -284,7 +284,7 @@ div {
         margin-right: 5px;
     }
 
-    &__link{
+    &__link {
         color: @color_red;
         text-decoration: underline;
     }
@@ -297,7 +297,7 @@ div {
     }
 }
 
-.breadcrumbs-menu__link:focus{
+.breadcrumbs-menu__link:focus {
     color: @color_black;
     text-decoration: none;
 }
@@ -368,84 +368,140 @@ div {
     }
 }
 
-.info__name {
-    font-size: 36px;
-    color: @color_black;
-    font-weight: bold;
-    text-align: left;
-    padding: 0 3px;
-    letter-spacing: .2px;
-    // position: relative;
-    @media @phone-strict {
-        font-size: 20px;
+.info {
+    &__name {
+        font-size: 36px;
+        color: @color_black;
+        font-weight: bold;
+        text-align: left;
+        padding: 0 3px;
+        letter-spacing: .2px;
+        // position: relative;
+        @media @phone-strict {
+            font-size: 20px;
+        }
+        @media @tablet-strict {
+            font-size: 24px;
+        }
     }
-    @media @tablet-strict {
-        font-size: 24px;
-    }
-}
 
-.info__composition {
-    //position: relative;
-    font-size: 16px;
-    letter-spacing: .2px;
-    color: @color_black;
-    padding: 6px 4px 0;
-    width: 690px;
-    height: 32px;
-    @media @phone-strict {
-        font-size: 12px;
-        width: 300px;
+    &__composition {
+        font-size: 16px;
+        letter-spacing: .2px;
+        color: @color_black;
+        padding: 6px 4px 0;
+        width: 690px;
+        height: 32px;
+        @media @phone-strict {
+            font-size: 12px;
+            width: 300px;
+        }
+        @media @tablet-strict {
+            font-size: 12px;
+        }
     }
-    @media @tablet-strict {
-        font-size: 12px;
-    }
-}
 
-.info__price {
-    font-family: @font_default;
-    padding-top: 27px;
-    font-weight: bold;
-    color: @color_red;
-    font-size: 36px;
-    letter-spacing: .2px;
+    &__price {
+        font-family: @font_default;
+        padding-top: 27px;
+        font-weight: bold;
+        color: @color_red;
+        font-size: 36px;
+        letter-spacing: .2px;
+        @media @phone-strict {
+            padding-top: 10px;
+            font-size: 28px;
+        }
+        @media @tablet-strict {
+            font-size: 12px;
+        }
 
-    @media @phone-strict {
-        padding-top: 10px;
-        font-size: 28px;
+        &_rub {
+            font-family: @font_tel;
+            font-size: 40px;
+            font-weight: bold;
+            @media @phone-strict {
+                font-size: 32px;
+            }
+            @media @tablet-strict {
+                font-size: 32px;
+            }
+        }
     }
-    @media @tablet-strict {
-        font-size: 12px;
-    }
-}
 
-.info_rub{
-    font-family: @font_tel;
-    font-size: 40px;
-    font-weight: bold;
-    @media @phone-strict {
-        font-size: 32px;
+    &__size-text {
+        padding: 21px 2px 0;
+        color: @color_black;
+        font-size: 16px;
+        @media @phone-strict {
+            padding-top: 10px;
+            font-size: 12px;
+        }
+        @media @tablet-strict {
+            font-size: 12px;
+        }
     }
-    @media @tablet-strict {
-        font-size: 32px;
-    }
-}
 
-.info__size-text {
-    padding: 21px 2px 0;
-    color: @color_black;
-    font-size: 16px;
-    @media @phone-strict {
-        padding-top: 10px;
-        font-size: 12px;
+    &__size {
+        display: flex;
+        margin-left: 2px;
     }
-    @media @tablet-strict {
-        font-size: 12px;
-    }
-}
 
-.info__size {
-    display: flex;
-    margin-left: 2px;
+    &__color-text {
+        padding: 33px 2px 0;
+        color: @color_black;
+        font-size: 16px;
+        @media @phone-strict {
+            padding-top: 10px;
+            font-size: 12px;
+        }
+        @media @tablet-strict {
+            font-size: 12px;
+        }
+    }
+
+    &__color {
+        display: flex;
+        align-items: flex-end;
+        margin-left: 2px;
+    }
+
+    &__buy {
+        margin-top: 42px;
+        margin-left: 2px;
+        width: @size_button*3;
+        height: @size_button + 10px;
+        color: @color_white;
+        border: 1px solid @color_red;
+        background-color: @color_red;
+        font-size: 30px;
+        letter-spacing: .7px;
+        @media @phone-strict {
+            width: 37px * 9;
+            height: 37px;
+            font-size: 24px;
+        }
+
+        &_btn {
+            padding-top: 8px;
+            display: block;
+            text-align: center;
+            height: 100%;
+            color: @color_white;
+        }
+    }
+
+    &__heart {
+        margin: 42px 5px 0;
+        width: 200px;
+        display: flex;
+        //justify-content: flex-start;
+        align-items: center;
+
+        &__defer {
+            padding-left: 20px;
+        }
+    }
 }
 
 .size__b-size {
@@ -470,25 +526,6 @@ div {
     @media @tablet-strict {
         font-size: 12px;
     }
-}
-
-.info__color-text {
-    padding: 33px 2px 0;
-    color: @color_black;
-    font-size: 16px;
-    @media @phone-strict {
-        padding-top: 10px;
-        font-size: 12px;
-    }
-    @media @tablet-strict {
-        font-size: 12px;
-    }
-}
-
-.info__color {
-    display: flex;
-    align-items: flex-end;
-    margin-left: 2px;
 }
 
 .color__size {
@@ -526,53 +563,18 @@ div {
     border: 1.5px solid @color_red;
 }
 
-.info__buy {
-    margin-top: 42px;
-    margin-left: 2px;
-    width: @size_button*3;
-    height: @size_button + 10px;
-    color: @color_white;
-    border: 1px solid @color_red;
-    background-color: @color_red;
-    font-size: 30px;
-    letter-spacing: .7px;
-    @media @phone-strict {
-        width: 37px * 9;
-        height: 37px;
-        font-size: 24px;
+.heart {
+    &__img {
+        opacity: .5;
+        width: 25px;
     }
-}
-
-.info__buy_btn {
-    padding-top: 8px;
-    display: block;
-    text-align: center;
-    height: 100%;
-    color: @color_white;
-}
-
-.info__heart {
-    margin: 42px 5px 0;
-    width: 200px;
-    display: flex;
-    //justify-content: flex-start;
-    align-items: center;
 
     &__defer {
-        padding-left: 20px;
+        font-size: 16px;
+        color: rgb(153, 153, 153);
+        padding-left: 10px;
+        text-decoration: underline;
     }
-}
-
-.heart__img {
-    opacity: .5;
-    width: 25px;
-}
-
-.heart__defer {
-    font-size: 16px;
-    color: rgb(153, 153, 153);
-    padding-left: 10px;
-    text-decoration: underline;
 }
 
 //
@@ -602,29 +604,56 @@ div {
             align-items: stretch;
         }
     }
-}
 
-///////задаем размеры блоков внутри page части
-.footer__service {
-    width: 370px;
-}
+    &__service {
+        width: 370px;
+    }
 
-.footer__about-us {
-    margin-left: -45px;
-    width: 320px;
-    @media @phone-strict {
-        width: 280px;
+    &__about-us {
+        margin-left: -45px;
+        width: 320px;
+        @media @phone-strict {
+            width: 280px;
+        }
+    }
+
+    &__info {
+        width: 400px;
+        @media @phone-strict {
+            width: 360px;
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media @phone-strict {
+            flex-direction: row;
+            justify-content: space-around;
+            height: 30px;
+        }
+    }
+
+    &__line {
+        margin-top: 41px;
+        color: @color_black;
+        opacity: .5;
+        @media @phone-strict {
+            width: 330px;
+        }
+    }
+
+    &__end {
+        font-size: 14px;
+        margin-top: 25px;
+        padding-bottom: 20px;
+        line-height: 2;
+        @media @phone-strict {
+            width: 375px;
+        }
     }
 }
-
-.footer__info {
-    width: 400px;
-    @media @phone-strict {
-        width: 360px;
-    }
-}
-
-///////////////////////////////////
 
 /////делаем отступы слева и справа у футера
 .footer__service,
@@ -658,7 +687,9 @@ div {
         margin-right: @tablet-strict_margin;
     }
 }
+
 /////////////////////////
+
 .service__header,
 .about-us__header {
     color: @color_black;
@@ -679,26 +710,23 @@ div {
 }
 
 .footer__info,
-.footer__social{
+.footer__social {
     line-height: 2;
     margin-top: 65px;
 }
 
 .info__link,
-.footer__social{
+.footer__social {
     height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.block__list,
-.part__list {
+// две колонки в блоках футера service и about-us
+.column-2 {
     column-count: 2;
     column-gap: 0;
-    //list-style-position: inside;
-    //list-style-type: decimal;
-    //column-width: 123px;
 }
 
 .block__item,
@@ -723,37 +751,52 @@ div {
     width: 40px;
 }
 
+.social {
+    &__icon {
+        width: 32px;
+        margin-bottom: 6px;
 
-/// для блока с кнопками соц сетей делаем вертикально на пк
-/// на малых экранах горизонтально
-.footer__social {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @media @phone-strict {
-        flex-direction: row;
-        justify-content: space-around;
-        height: 30px;
+        &_facebook {
+            width: 15px;
+            padding-top: 0;
+        }
+
+        &_twitter {
+            padding-top: 8px;
+        }
+
+        &_instagram {
+            padding-top: 8px;
+        }
     }
 }
 
-.social__icon {
-    width: 32px;
-    margin-bottom: 6px;
+.link {
+    padding-left: 20px;
+    @media @phone-strict {
+        padding-left: 0;
+    }
+
+    &__delivery {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__gift {
+        height: 30px;
+        padding-left: 16px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__promotion {
+        height: 30px;
+        padding-left: 22px;
+        display: flex;
+        align-items: flex-start;
+    }
 }
 
-.social__icon_facebook {
-    width: 15px;
-    padding-top: 0;
-}
-
-.social__icon_twitter{
-    padding-top: 8px;
-}
-
-.social__icon_instagram{
-    padding-top: 8px;
-}
 ////задаем размер иконок в футере
 .del__img {
     width: 46px;
@@ -770,31 +813,6 @@ div {
 //////////
 
 //////выравнивание трертьей колонки с иконками
-.info__link{
-    padding-left: 20px;
-    @media @phone-strict {
-        padding-left: 0;
-    }
-}
-
-.info__delivery {
-    display: flex;
-    align-items: flex-start;
-}
-
-.link__gift {
-    height: 30px;
-    padding-left: 16px;
-    display: flex;
-    align-items: flex-start;
-}
-
-.link__promotion {
-    height: 30px;
-    padding-left: 22px;
-    display: flex;
-    align-items: flex-start;
-}
 
 .del__text,
 .gift__text,
@@ -802,23 +820,6 @@ div {
     margin-left: 10px;
     height: 30px;
 }
-/////////
-.footer__end {
-    font-size: 14px;
-    margin-top: 25px;
-    padding-bottom: 20px;
-    line-height: 2;
-    @media @phone-strict {
-        width: 375px;
-    }
-}
 
-.footer__line {
-    margin-top: 41px;
-    color: @color_black;
-    opacity: .5;
-    @media @phone-strict {
-        width: 330px;
-    }
-}
+/////////
 
