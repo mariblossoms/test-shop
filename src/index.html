@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online shop</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+<div class="page">
+    <div class="content">
+        <header class="header">
+            <div class="header__number number">7h3 5h0p
+            </div>
+            <div class="header__logo logo">
+                <img class="logo_img" src="img/oggetto_logo.svg">
+            </div>
+            <div class="header__phone phone">+7 (812) 2•12•85•06
+            </div>
+
+        </header>
+
+
+        <div class="h-menu">
+            <nav class="menu">
+                <ul class="menu__list">
+                    <% const menu = ['LISPaaaa', 'OCalm', 'JavaScript', 'Python','PHP']%>
+                    <% menu.forEach(function (item,index) { %>
+                    <li class="menu__item">
+                        <% let className =''; %>
+                        <% if (index == 0) {%>
+                            <span><%= item %></span>
+                        <%} else {%>
+                        <a href ="#"
+                           class ="menu__link <% = className %>"><%= item%></a>
+
+
+                        <%}%>
+                    </li>
+                    <%});%>
+                </ul>
+            </nav>
+            <!--<div class="h-menu__nav nav">-->
+                <!--<a href="#" class="nav__link nav__link_active">LISP </a>-->
+                <!--<a href="#" class="nav__link">OCaml</a>-->
+                <!--<a href="#" class="nav__link">JavaScript</a>-->
+                <!--<a href="#" class="nav__link">Python</a>-->
+                <!--<a href="#" class="nav__link">PHP</a>-->
+            <!--</div>-->
+            <form action="//google.com/search" class="h-menu__search search">
+                <input type="search" class="search_input" placeholder="">
+                <input type="image" class="search_img" src="img/search.svg">
+            </form>
+        </div>
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs__list list">
+                <a href="#" class="list__link">LISP</a>
+                <span class="list__link_slash">/</span>
+                <a href="#" class="list__link">Одежда</a>
+                <span class="list__link_slash">/</span>
+                <a href="#" class="list__link list__link_last">Футболки</a>
+            </div>
+
+        </div>
+
+        <div class="product">
+            <div class="product__img">
+                <img class="product__img_pict" id="img__id" src="img/tshirt_white.jpg">
+
+            </div>
+
+            <div class="product__info info">
+                <h2 class="info__name">Футболка Alien technology</h2>
+                <p class="info__composition">Состав: 100% хлопок, динамическая типизация, польская нотация.
+                    Производство: Россия</p>
+                <p class="info__price">1500₽</p>
+                <p class="info__size-text">Размер:</p>
+                <div class="info__size size">
+                    <div id ="size_S" class="size__b-size">S</div>
+                    <div id ="size_M" class="size__b-size ">M</div>
+                    <div id ="size_L" class="size__b-size">L</div>
+                </div>
+
+                <p class="info__color-text">Цвет:</p>
+                <div class="info__color color">
+                    <div id="color1" class="color__size color__1 color__size_border" onclick="changeImg('img/tshirt_white.jpg')">
+                    </div>
+                    <div id="color2" class="color__size color__2" onclick="changeImg('img/tshirt_yellow.jpg')">
+                    </div>
+                    <div id="color3" class="color__size color__3" onclick="changeImg('img/tshirt_green.jpg')">
+                    </div>
+                </div>
+                <div class="info__buy">
+                    <a href="#" class="info__buy_btn">Купить</a>
+                </div>
+                <div class="info__heart heart">
+                    <img class="heart__img icon" src="img/heart.svg">
+                    <a href="#" class="heart__defer defer">Отложить на потом</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__page">
+            <div class="footer__service service">
+                <h3 class="service__header">
+                    Сервис и поддержка
+                </h3>
+                <div class="service__part">
+                    <a href="#" class="service__part_link">
+                        Как сделать заказ <br> Возврат товара <br> Публичная оферта <br> Доставка<br>
+                    </a>
+                    <a href="#" class="service__part_link">
+                        Способы оплаты<br> Правила продажи <br>Возврат денежных средств<br> Вопросы
+                    </a>
+                </div>
+            </div>
+            <div class="footer__about-us about-us">
+                <h3 class="about-us__header">
+                    О компании
+                </h3>
+                <div class="about-us__part">
+                    <a href="#" class="about-us__part_link">
+                        О нас <br> Контакты <br> Вакансии <br> Партнерам
+                    </a>
+                    <a href="#" class="about-us__part_link">
+                        Сертификаты <br>Преимущества<br> Наши скидки
+                    </a>
+                </div>
+
+            </div>
+            <div class="footer__info info">
+                <div class="info__link link">
+                    <div class="info__delivery del">
+                        <img class="del__img" src="img/delivery.svg">
+                        <span class="del__text">бесплатная доставка от 4000 ₽</span>
+                    </div>
+                    <div class="link__gift gift">
+                        <img class="gift__img" src="img/heart.svg">
+                        <span class="gift__text">пробники в подарок при каждой покупке</span>
+                    </div>
+                    <div class="link__promotion prom">
+                        <img class="prom__img" src="img/cup.svg">
+                        <span class="prom__text">акции и подарки за покупку</span>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="footer__social social">
+                <a href="#"> <img class="social__icon social__icon_facebook" src="img/facebook.svg"></a>
+                <a href="#"><img class="social__icon social__icon_twitter" src="img/twitter.svg"></a>
+                <a href="#"><img class="social__icon social__icon_instagram" src="img/instagram.svg"></a>
+            </div>
+        </div>
+            <hr class="footer__line">
+            <p class="footer__end">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
+                Все права защищены. Доставка по всей России!</p>
+
+    </footer>
+
+</div>
+<script src="js/less.js" type="text/javascript"></script>
+<script src="js/scripts.js" type="text/javascript"></script>
+</body>
+</html>
