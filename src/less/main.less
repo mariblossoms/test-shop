@@ -35,6 +35,7 @@ a:hover {
 
 .page {
     max-width: 1400px;
+    min-width: 375px;
     margin: 0 auto;
     font-family: @font_default;
     display: flex;
@@ -43,7 +44,7 @@ a:hover {
     //    align-items: center;
 
     @media @phone-strict {
-        width: 375px;
+        min-width: 375px;
 
         .page {
             max-height: 667px;
@@ -146,7 +147,7 @@ a:hover {
 //
 //navigation and search menu
 //
-.h-menu{
+.h-menu {
     width: 100%;
     background-color: @background_ftr_hdr;
     border-bottom: 1px solid @color_line;
@@ -524,7 +525,7 @@ a:hover {
     }
 }
 
-.color{
+.color {
     &__size {
         margin-top: 13px;
         margin-right: 9px;
@@ -578,123 +579,6 @@ a:hover {
 //
 //FOOTER
 //
-.footer {
-    margin-top: 67px;
-    // width: 1600px;
-    //  height: 1473px;
-    font-family: @font_default;
-    background-color: @background_ftr_hdr;
-    border-top: 1px solid @color_line;
-
-    @media @phone-strict {
-        width: 375px;
-    }
-
-    &__wrapper{
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    &__page {
-        display: flex; // на пк элементы горизонтально
-        justify-content: space-between;
-        padding-bottom: 20px;
-
-        @media @phone-strict {
-            width: 375px;
-            height: auto;
-            flex-direction: column; // на телефоне элементы вертикально
-            align-items: stretch;
-        }
-    }
-
-    &__service {
-        width: 370px;
-    }
-
-    &__about-us {
-        margin-left: -45px;
-        width: 320px;
-        @media @phone-strict {
-            width: 280px;
-        }
-    }
-
-    &__info {
-        width: 400px;
-        @media @phone-strict {
-            width: 360px;
-        }
-    }
-
-    &__social {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        @media @phone-strict {
-            flex-direction: row;
-            justify-content: space-around;
-            height: 30px;
-        }
-    }
-
-    &__line {
-        margin-top: 41px;
-        color: @color_black;
-        opacity: .5;
-        @media @phone-strict {
-            width: 330px;
-        }
-    }
-
-    &__end {
-        font-size: 14px;
-        margin-top: 25px;
-        padding-bottom: 20px;
-        line-height: 2;
-        @media @phone-strict {
-            width: 375px;
-        }
-    }
-}
-
-//.block-ftr__
-
-.block-ftr{
-    margin-top: 55px;
-    line-height: 1.5;
-
-    &__header {
-        color: @color_black;
-        font-weight: bold;
-        font-size: @font_size_footer;
-        text-align: left;
-        margin-bottom: 17px;
-        @media @phone-strict {
-            font-size: 80%;
-            text-align: center;
-        }
-    }
-
-    &__item {
-        list-style-type: none;
-    }
-
-    &__link {
-        font-size: 14px;
-        color: @color_black;
-        text-align: left;
-        @media @tablet-strict {
-            font-size: @font_size_footer - 1px;
-        }
-    }
-
-    &__column {
-        column-count: 2;
-        column-gap: 0;
-    }
-}
-
 .footer__info,
 .footer__social {
     line-height: 2;
@@ -784,4 +668,119 @@ a:hover {
 }
 
 /////////
+.footer {
+    margin-top: 67px;
+    // width: 1600px;
+    //  height: 1473px;
+    font-family: @font_default;
+    background-color: @background_ftr_hdr;
+    border-top: 1px solid @color_line;
 
+    &__wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    &__page {
+        display: flex; // на пк элементы горизонтально
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
+
+    &__service {
+        width: 370px;
+    }
+
+    &__about-us {
+        margin-left: -45px;
+        width: 320px;
+    }
+
+    &__info {
+        width: 400px;
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__line {
+        margin-top: 41px;
+        color: @color_black;
+        opacity: .5;
+    }
+
+    &__end {
+        font-size: 14px;
+        margin-top: 25px;
+        padding-bottom: 20px;
+        line-height: 2;
+    }
+
+    @media @phone-strict {
+        width: 375px;
+
+        &__page {
+            height: auto;
+            flex-direction: column; // на телефоне элементы вертикально
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        &__info {
+            width: 300px;
+        }
+
+        &__social {
+            flex-direction: row;
+            justify-content: space-around;
+            width: 300px;
+            height: auto;
+        }
+
+        &__line {
+            width: 330px;
+        }
+
+        &__end {
+            width: 375px;
+        }
+    }
+}
+
+.block-ftr {
+    margin-top: 55px;
+    line-height: 1.5;
+
+    &__header {
+        color: @color_black;
+        font-weight: bold;
+        font-size: @font_size_footer;
+        text-align: left;
+        margin-bottom: 17px;
+        @media @phone-strict {
+            font-size: 80%;
+            text-align: center;
+        }
+    }
+
+    &__item {
+        list-style-type: none;
+    }
+
+    &__link {
+        font-size: 14px;
+        color: @color_black;
+        text-align: left;
+        @media @tablet-strict {
+            font-size: @font_size_footer - 1px;
+        }
+    }
+
+    &__column {
+        column-count: 2;
+        column-gap: 0;
+    }
+}
