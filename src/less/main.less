@@ -524,34 +524,36 @@ a:hover {
     }
 }
 
-.color__size {
-    margin-top: 13px;
-    margin-right: 9px;
-    width: @size_button - 2px;
-    height: @size_button - 2px;
-    border: 1px solid @color_black;
-    list-style-type: none;
-    @media @phone-strict {
-        width: 37px;
-        height: 37px;
-        padding-top: 0;
-        font-size: 28px;
+.color{
+    &__size {
+        margin-top: 13px;
+        margin-right: 9px;
+        width: @size_button - 2px;
+        height: @size_button - 2px;
+        border: 1px solid @color_black;
+        list-style-type: none;
+        @media @phone-strict {
+            width: 37px;
+            height: 37px;
+            padding-top: 0;
+            font-size: 28px;
+        }
+        @media @tablet-strict {
+            //   font-size: 12px;
+        }
     }
-    @media @tablet-strict {
-        //   font-size: 12px;
+
+    &_white {
+        background-color: #fffafb;
     }
-}
 
-.color_white {
-    background-color: #fffafb; // белый
-}
+    &_yellow {
+        background-color: #e3d95e;
+    }
 
-.color_yellow {
-    background-color: #e3d95e; // желтый
-}
-
-.color_green {
-    background-color: #a5af96; // зеленый
+    &_green {
+        background-color: #a5af96;
+    }
 }
 
 .js-sizeProduct_active,
