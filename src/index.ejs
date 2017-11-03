@@ -13,35 +13,38 @@
 <body>
 <div class="page">
     <div class="content">
-        <header class="header">
-            <div class="header__number number">7h3 5h0p
-            </div>
-            <div class="header__logo logo">
-                <img class="logo_img" alt="Oggettoweb" src="img/oggetto_logo.svg">
-            </div>
-            <div class="header__phone phone">+7 (812) 2•12•85•06
-            </div>
+        <div class="header__block">
+            <header class="header">
+                <div class="header__number number">7h3 5h0p
+                </div>
+                <div class="header__logo logo">
+                    <img class="logo_img" alt="Oggettoweb" src="img/oggetto_logo.svg">
+                </div>
+                <div class="header__phone phone">+7 (812) 2•12•85•06
+                </div>
 
-        </header>
+            </header>
 
 
-        <div class="h-menu">
-            <% const menu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
-            <div class="menu">
-                <ul class="menu__list">
-                    <% menu.forEach(function(item, i) { %>
-                    <li class="menu__item">
-                        <a href="#" class="menu__link"><%= item %></a>
-                    </li>
-                    <% }); %>
-                </ul>
+            <div class="h-menu">
+                <div class="h-menu-wrapper">
+                    <% const menu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
+                    <div class="h-menu-wrapper__menu menu">
+                        <ul class="menu__list">
+                            <% menu.forEach(function(item, i) { %>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link"><%= item %></a>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                    <form action="//google.com/search" class="h-menu-wrapper__search search">
+                        <input type="search" class="search__text" placeholder="">
+                        <input type="image" alt="Поиск" class="search__img" src="img/search.svg">
+                    </form>
+                </div>
             </div>
-            <form action="//google.com/search" class="h-menu__search search">
-                <input type="search" class="search search_input" placeholder="">
-                <input type="image" alt="Поиск" class="search search_img" src="img/search.svg">
-            </form>
         </div>
-
         <div class="breadcrumbs">
             <% const bread = ['LISP', 'Одежда', 'Футболки'] %>
             <div class="breadcrumbs-menu">
@@ -53,7 +56,7 @@
                         <span class="breadcrumbs-menu__slash">/</span>
                         <% } %>
                     </li>
-                   <% }) %>
+                    <% }) %>
                 </ul>
 
             </div>
@@ -62,83 +65,69 @@
 
         <div class="product">
             <div class="product__img">
-                <img class="product__img_pict" alt="7h3 5h0p" id="img__id" src="img/tshirt_white.jpg">
+                <img class="product__tshirt" alt="7h3 5h0p" id="productImg" src="img/tshirt_white.jpg">
             </div>
 
-            <form action="#" class="product__info info" method="post">
+            <form action="#" class="product__info js-info" method="post">
                 <h2 class="info__name">Футболка Alien technology</h2>
                 <p class="info__composition">Состав: 100% хлопок, динамическая типизация, польская нотация.
                     Производство: Россия</p>
-                <p class="info__price">1500<span class="info__price_rub">₽</span></p>
+                <p class="info__price">1500<span class="info__price_currency">₽</span></p>
                 <p class="info__size-text">Размер:</p>
+                <% const size = ['S', 'M', 'L'] %>
                 <ul class="info__size size">
-                    <li class="size__b-size"
-                        data-type="size"
-                        data-value="S">S
+                    <% size.forEach(function (item, index) { %>
+                    <li class="size__item js-sizeProduct"><%= item %>
                     </li>
-                    <li class="size__b-size"
-                        data-type="size"
-                        data-value="M">M
-                    </li>
-                    <li class="size__b-size"
-                        data-type="size"
-                        data-value="L">L
-                    </li>
+                    <% }) %>
                 </ul>
 
                 <p class="info__color-text">Цвет:</p>
+                <!--<% const color = ['', '', ''] %>-->
                 <ul class="info__color color">
-                    <li class="color__size color__1"
-                        data-type="color"
-                        data-value="white">
-                    </li>
-                    <li class="color__size color__2"
-                        data-type="color"
-                        data-value="yellow">
-                    </li>
-                    <li class="color__size color__3"
-                        data-type="color"
-                        data-value="green">
-                    </li>
+                    <li class="color__size js-color color_white"></li>
+                    <li class="color__size js-color color_yellow"></li>
+                    <li class="color__size js-color color_green"></li>
                 </ul>
-                   <button class="info__buy" autofocus>Купить</button>
-                <div class="info__heart heart">
-                    <img alt="" class="heart__img icon" src="img/samples.svg">
-                    <a href="#" class="heart__defer">Отложить на потом</a>
+                <button class="info__buy" autofocus>Купить</button>
+                <div class="info__add-to-wishlist add-to-wishlist">
+                    <img alt="" class="add-to-wishlist__img" src="img/samples.svg">
+                    <a href="#" class="add-to-wishlist__defer">Отложить на потом</a>
                 </div>
 
             </form>
         </div>
     </div>
     <footer class="footer">
+        <div class="footer__wrapper">
         <div class="footer__page">
-            <div class="footer__service service">
-                <h3 class="service__header">
+            <div class="footer__service block-ftr">
+                <h3 class="block-ftr__header">
                     Сервис и поддержка
                 </h3>
                 <% const service = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Доставка',
                     'Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'] %>
                 <div class="service__block block">
-                    <ul class="block__list column-2">
+                    <ul class="block__list block-ftr__column">
                         <% service.forEach(function(item) { %>
-                        <li class="block__item">
-                            <a href="#" class="block__link"><%= item %></a>
+                        <li class="block-ftr_item">
+                            <a href="#" class="block-ftr__link"><%= item %></a>
                         </li>
                         <% }); %>
                     </ul>
                 </div>
             </div>
-            <div class="footer__about-us about-us">
-                <h3 class="about-us__header">
+            <div class="footer__about-us block-ftr">
+                <h3 class="block-ftr__header">
                     О компании
                 </h3>
                 <% const about = ['О нас', 'Контакты', 'Вакансии', 'Партнерам',
                     'Сертификаты', 'Преимущества', 'Наши скидки'] %>
                 <div class="about-us__part part">
-                    <ul class="part__list column-2">
+                    <ul class="part__list block-ftr__column">
                         <% about.forEach(function(item) { %>
-                        <li class="part__item">
-                            <a href="#" class="part__link"><%= item %></a>
+                        <li class="block-ftr__item">
+                            <a href="#" class="block-ftr__link"><%= item %></a>
                         </li>
                         <% }); %>
                     </ul>
@@ -146,17 +135,17 @@
             </div>
             <div class="footer__info info">
                 <div class="info__link link">
-                    <div class="link__delivery del">
-                        <img class="del__img" alt="" src="img/delivery.svg">
-                        <span class="del__text">бесплатная доставка от 4000 ₽</span>
+                    <div class="link__delivery delivery">
+                        <img class="delivery__img" alt="" src="img/delivery.svg">
+                        <span class="delivery__text block-ftr__link">бесплатная доставка от 4000 ₽</span>
                     </div>
                     <div class="link__gift gift">
                         <img class="gift__img" alt="" src="img/heart.svg">
-                        <span class="gift__text">пробники в подарок при каждой покупке</span>
+                        <span class="gift__text block-ftr__link">пробники в подарок при каждой покупке</span>
                     </div>
                     <div class="link__promotion prom">
                         <img class="prom__img" alt="" src="img/cup.svg">
-                        <span class="prom__text">акции и подарки за покупку</span>
+                        <span class="prom__text block-ftr__link">акции и подарки за покупку</span>
                     </div>
 
                 </div>
@@ -165,13 +154,14 @@
             <div class="footer__social social">
                 <a href="#"><img class="social__icon social__icon_facebook" alt="facebook" src="img/facebook.svg"></a>
                 <a href="#"><img class="social__icon social__icon_twitter" alt="twitter" src="img/twitter.svg"></a>
-                <a href="#"><img class="social__icon social__icon_instagram" alt="instagram" src="img/instagram.svg"></a>
+                <a href="#"><img class="social__icon social__icon_instagram" alt="instagram"
+                                 src="img/instagram.svg"></a>
             </div>
         </div>
         <hr class="footer__line">
         <p class="footer__end">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.<br>
             Все права защищены. Доставка по всей России!</p>
-
+        </div>
     </footer>
 
 </div>

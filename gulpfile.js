@@ -8,6 +8,8 @@ const ejs          = require('gulp-ejs');
 const gutil        = require('gulp-util');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
+// const gulpIf = require('gulp-if');
+// const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 //const path         = require('path');
 
 // Автоперезагрузка при изменении файлов в папке `dist`:
@@ -37,6 +39,7 @@ gulp.task('styles', () => {
 
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
+    // .pipe(gulpIf(isDevelopment, imagemin({
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
