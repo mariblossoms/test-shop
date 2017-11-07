@@ -18,7 +18,8 @@
                 <div class="header__number number">7h3 5h0p
                 </div>
                 <div class="header__logo logo">
-                    <img class="logo_img" alt="Oggettoweb" src="img/oggetto_logo.svg">
+                    <!--<a href="#" class="logo__img"><%- include('img/oggetto_logo.svg'); %></a>-->
+                    <img class="logo__img" alt="Oggettoweb" src="img/oggetto_logo.svg">
                 </div>
                 <div class="header__phone phone">+7 (812) 2•12•85•06
                 </div>
@@ -83,15 +84,15 @@
                 </ul>
 
                 <p class="info__color-text">Цвет:</p>
-                <!--<% const color = ['', '', ''] %>-->
+                <% const color = ['white', 'yellow', 'green'] %>
                 <ul class="info__color color">
-                    <li class="color__size js-color color_white"></li>
-                    <li class="color__size js-color color_yellow"></li>
-                    <li class="color__size js-color color_green"></li>
+                    <% color.forEach(function (item, index) { %>
+                    <li class="color__size js-color color_<%= item %>"></li>
+                    <% }) %>
                 </ul>
                 <button class="info__buy" autofocus>Купить</button>
                 <div class="info__add-to-wishlist add-to-wishlist">
-                    <img alt="" class="add-to-wishlist__img" src="img/samples.svg">
+                    <a href="#" class="add-to-wishlist__img"><%- include('img/samples.svg'); %></a>
                     <a href="#" class="add-to-wishlist__defer">Отложить на потом</a>
                 </div>
 
@@ -134,7 +135,18 @@
                 </div>
             </div>
             <div class="footer__info info">
+                <!--<% const info = ['бесплатная доставка от 4000 ₽', 'пробники в подарок при каждой покупке', 'акции и подарки за покупку'] %>-->
+                <!--<% const icons = ['img/delivery.svg', 'img/heart.svg', 'img/cup.svg'] %>-->
+                   <!--<ul class="info__link link">-->
+                        <!--<% icons.forEach(function (item) {%>-->
+                       <!--<li class="">-->
+                           <!--<a href="#" class="block-ftr__link"><%= item %></a>-->
+                       <!--</li>-->
+                       <!--<%});%>-->
+
+                    <!--</ul>-->
                 <div class="info__link link">
+
                     <a href="#" class="link__delivery delivery">
                         <img class="delivery__img" alt="" src="img/delivery.svg">
                         <span class="delivery__text block-ftr__link">бесплатная доставка от 4000 ₽</span>

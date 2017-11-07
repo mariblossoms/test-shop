@@ -1,26 +1,26 @@
 const productForm = document.querySelector('.js-info');
 let selectedTd;
 let selectedColor;
-const imgX = 'img/tshirt_white.jpg';
-const imgY = 'img/tshirt_yellow.jpg';
-const imgZ = 'img/tshirt_green.jpg';
+const img = document.getElementById('productImg');
+const color = [
+    {colorName: 'white'},
+    {colorName: 'yellow'},
+    {colorName: 'green'},
+];
+const className = 'color_';
 
 productForm.addEventListener('click', function (event) {
     const el = event.target;
     const classes = el.classList;
     if (classes.contains('js-sizeProduct')) {
         highlightSize(el);
-    }   else if (classes.contains('js-color')) {
+    } else if (classes.contains('js-color')) {
         highlightColor(el);
-
-        const img = document.getElementById('productImg');
-        if (classes.contains('color_white')) {
-            img.src = imgX;
-        } else if (classes.contains('color_yellow')) {
-            img.src = imgY;
-        } else if (classes.contains('color_green')) {
-            img.src = imgZ;
-        }
+        color.forEach(el => {
+            if (classes.contains(className + el.colorName)) {
+                img.src = 'img/tshirt_' + el.colorName + '.jpg';
+            }
+        });
     }
 
 });
