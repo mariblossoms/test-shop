@@ -14,7 +14,7 @@
 @pad: 20px; //100px
 @font_name: 36px;
 @size_button: 67px;
-@tablet-strict_margin: 50px;
+@tablet-strict_margin: 20px;
 @large_margin: 150px;
 @background_ftr_hdr: #f2f2ed;
 @color_line: rgb(217, 217, 212);
@@ -33,68 +33,31 @@ a:hover {
     text-decoration: none;
 }
 
-.page {
-    max-width: 1400px;
-    min-width: 375px;
-    margin: 0 auto;
-    font-family: @font_default;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    //    align-items: center;
-
-    @media @phone-strict {
-        min-width: 375px;
-
-        .page {
-            max-height: 667px;
-        }
-    }
-    @media @tablet-strict {
-        width: 768px;
-
-        .page {
-            max-height: 1024px;
-        }
-    }
-    @media @large {
-        max-width: 1920px;
-    }
-}
-
 .content {
-    //max-width: 1400px;
     padding-bottom: 50px;
-    //max-width: 1920px;
-    //margin: auto;
 }
 
 //
 // Name-logotype-phone
 //
 .header {
-    max-width: 1400px;
+    padding: 10px;
+    font-size: 12px;
+    height: 30%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 24px;
     font-weight: bold;
     color: @color_red;
-    padding: 17px 0 10px;
-
+    //margin-left: 10px;
     &__number {
         font-family: @font_tel;
         text-align: left;
-        width: 200px;
     }
 
     &__logo {
         text-align: right;
-        //      width: 50px;
-        //      height: auto;
-        padding-left: 12px;
-        padding-top: 2px;
     }
 
     &__phone {
@@ -102,49 +65,49 @@ a:hover {
         font-family: @font_default;
         letter-spacing: .4px;
     }
-
-    @media @phone-strict {
-        padding: 10px 0;
-        font-size: 12px;
-        height: 30%;
-
-        &__phone {
-            margin-right: 10px;
-            font-size: 12px;
-        }
-
-        &__number {
-            width: 55px;
-            margin-left: 10px;
-        }
-    }
-    @media @tablet-strict {
+    @media @tablet {
         font-size: 16px;
-        height: 30%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-        &__phone {
-            margin-right: @tablet-strict_margin;
-        }
+    @media @desktop {
+        max-width: 1440px;
+        font-size: 24px;
+        padding: 17px 20px 10px;
 
         &__number {
-            width: 20%;
-            margin-left: @tablet-strict_margin;
+            font-family: @font_tel;
+            text-align: left;
+            width: 200px;
+        }
+
+        &__logo {
+            text-align: right;
+            padding-left: 12px;
+            padding-top: 2px;
+        }
+
+        &__phone {
+            text-align: right;
+            font-family: @font_default;
+            letter-spacing: .4px;
         }
     }
 }
 
 //reduced the size of the logo
 .logo {
-    width: 50px;
+    width: 20px;
 
     &__img {
-        width: 48px;
-        @media @phone-strict {
-            width: 20px;
-        }
-        @media @tablet-strict {
-            width: 25px;
-        }
+        width: 100%;
+    }
+    @media @tablet {
+        width: 30px;
+    }
+    @media @desktop {
+        width: 50px;
     }
 }
 
@@ -152,64 +115,54 @@ a:hover {
 //navigation and search menu
 //
 .h-menu {
-    width: 100%;
+    //width: 100%;
     background-color: @background_ftr_hdr;
     border-bottom: 1px solid @color_line;
     border-top: 1px solid @color_line;
 }
 
 .h-menu-wrapper {
-    max-width: 1400px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 16px;
-    height: 50px;
-    margin: 3px auto;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60px;
+    font-size: 12px;
+    padding-left: 10px;
 
     &__menu {
-        //width: 350px;
         text-align: left;
-        font-family: @font_default;
-        padding: 10px 0;
-        @media @phone-strict {
-            margin-left: 10px;
-        }
-        @media @tablet-strict {
-            margin-left: @tablet-strict_margin;
-        }
     }
 
     &__search {
-        height: 36px;
-        display: flex;
-        align-items: center;
-        border: 1px solid rgb(216, 217, 212);
-        background-color: @color_white;
+        margin-bottom: 5px;
+        background-color: blue;
     }
 
-    @media @phone-strict {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        font-size: 12px;
-        height: 60px;
-
+    @media @tablet {
+        //max-width: 768px;
+        font-size: 16px;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+        //align-items: center;
         &__search {
-            margin-left: 10px;
-            margin-bottom: 5px;
-            width: 280px * .7;
-            height: 40px * .5;
+            //margin-right: @tablet-strict_margin;
         }
     }
 
-    @media @tablet-strict {
-        font-size: 14px;
-        display: flex;
-        align-items: center;
+    @media @desktop {
+        max-width: 1440px;
+        //margin: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px;
+        height: 50px;
 
         &__search {
-            margin-right: @tablet-strict_margin;
+            height: 36px;
         }
     }
 }
@@ -226,7 +179,7 @@ a:hover {
     }
 
     &__link {
-        margin-right: 5px;
+        //margin-right: 5px;
         color: @color_red;
         text-decoration: underline;
     }
@@ -238,43 +191,38 @@ a:hover {
     font-weight: bold;
 }
 
-.search__text {
-    border: none;
-    outline: none;
-    //-webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
-    width: 254px; /* Ширина поля */
-    vertical-align: middle;
-}
-
-.search__img {
-    //padding-top: 5px;
-    width: 280px - 254px;
-    height: 60%;
-    @media @phone-strict {
-        opacity: 0;
+.search {
+    width: 280px * .7;
+    height: 40px * .5;
+    border: 1px solid rgb(216, 217, 212);
+    background-color: @color_white;
+    display: flex;
+    align-items: center;
+    //width: 254px; ;
+    &__text {
+        width: 90%;
+        height: 100%;
+        border: none;
+        outline: none;
+        vertical-align: middle;
     }
-}
 
-.breadcrumbs {
-    max-width: 1400px;
-    margin: 0 auto;
-    font-size: 16px;
-    padding: 44px 0 0;
-    @media @phone-strict {
-        font-size: 12px;
-        margin-left: -5px;
-
-        &__list {
-            //margin-left: 10px;
-        }
-    }
-    @media @tablet-strict {
-        font-size: 14px;
-        margin: 15px 0 0;
+    &__img {
+        //padding-top: 5px;
+        width: 10%;
+        height: 60%;
+        //@media @phone-strict {
+        //    opacity: 0;
+        //}
     }
 }
 
 .breadcrumbs-menu {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    font-size: 12px;
+
     &__list {
         display: flex;
         flex-direction: row;
@@ -289,12 +237,15 @@ a:hover {
         color: @color_red;
         text-decoration: underline;
     }
-    @media @phone-strict {
-        margin-left: 5%;
+    @media @tablet {
+        font-size: 16px;
+        padding: 20px;
     }
 
-    @media @tablet-strict {
-        margin-left: @tablet-strict_margin;
+    @media @desktop {
+        max-width: 1440px;
+        font-size: 16px;
+        padding: 44px 20px 0;
     }
 }
 
@@ -310,41 +261,23 @@ a:hover {
 // product picture
 //
 .product {
+    margin: 10px 0 0 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    max-width: 1400px;
-    margin: 20px auto;
+    flex-direction: column;
+    align-items: flex-start;
 
     &__img {
-        text-align: center; //// расположение картинки в центре блока
+        text-align: left;
     }
 
     &__info {
-        font-family: @font_default;
-        padding-left: 63px;
-        margin-top: -10px;
-    }
-    @media @phone-strict {
-        margin: 10px 0 0 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        &__img {
-            //margin-left: 10px;
-            text-align: left; //// расположение картинки в центре блока
-        }
-
-        &__info {
-            display: block;
-            padding-left: 0;
-            margin-top: 10px;
-            //  background-color: aquamarine;
-        }
+        display: block;
+        padding-left: 0;
+        margin-top: 10px;
+        //  background-color: aquamarine;
     }
 
-    @media @tablet-strict {
+    @media @tablet {
         margin: 3% @tablet-strict_margin;
         display: flex;
         flex-direction: row;
@@ -354,51 +287,71 @@ a:hover {
             padding-left: 10px;
         }
     }
+
+    @media @desktop {
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        &__img {
+            //margin-left: 10px;
+            text-align: center; //// расположение картинки в центре блока
+        }
+
+        &__info {
+            font-family: @font_default;
+            padding-left: 63px;
+            margin-top: -10px;
+        }
+    }
 }
 
 .product__tshirt {
-    text-align: center;
-    max-width: 698px;
-    //min-height: 698px;
-    @media @phone-strict {
-        max-width: 60%;
-        height: auto;
-    }
-    @media @tablet-strict {
+    min-width: 200px;
+    width: 250px;
+    height: auto;
+    @media @tablet {
         width: 400px;
+    }
+
+    @media @desktop {
+        width: 698px;
     }
 }
 
 .info {
     &__name {
-        font-size: 36px;
+        font-size: 20px;
         color: @color_black;
         font-weight: bold;
         text-align: left;
         padding: 0 3px;
         letter-spacing: .2px;
         // position: relative;
-        @media @phone-strict {
-            font-size: 20px;
-        }
-        @media @tablet-strict {
+        @media @tablet {
             font-size: 24px;
+        }
+        @media @desktop {
+            font-size: 36px;
         }
     }
 
     &__composition {
-        font-size: 16px;
+        font-size: 12px;
         letter-spacing: .2px;
         color: @color_black;
         padding: 6px 4px 0;
         max-width: 690px;
         min-height: 32px;
-        @media @phone-strict {
+        width: 300px;
+        @media @tablet {
             font-size: 12px;
-            width: 300px;
+            width: auto;
         }
-        @media @tablet-strict {
-            font-size: 12px;
+        @media @desktop {
+            font-size: 16px;
         }
     }
 
@@ -407,25 +360,25 @@ a:hover {
         padding-top: 27px;
         font-weight: bold;
         color: @color_red;
-        font-size: 36px;
+        font-size: 28px;
         letter-spacing: .2px;
-        @media @phone-strict {
-            padding-top: 10px;
-            font-size: 28px;
-        }
-        @media @tablet-strict {
+        @media @tablet {
+            // padding-top: 10px;
             font-size: 32px;
+        }
+        @media @desktop {
+            font-size: 36px;
         }
 
         &_currency {
             font-family: @font_tel;
-            font-size: 40px;
+            font-size: 32px;
             font-weight: bold;
-            @media @phone-strict {
-                font-size: 32px;
+            @media @tablet {
+                font-size: 34px;
             }
-            @media @tablet-strict {
-                font-size: 32px;
+            @media @desktop {
+                font-size: 40px;
             }
         }
     }
@@ -433,13 +386,13 @@ a:hover {
     &__size-text {
         padding: 21px 2px 0;
         color: @color_black;
-        font-size: 16px;
-        @media @phone-strict {
+        font-size: 12px;
+        @media @tablet {
             padding-top: 10px;
             font-size: 12px;
         }
-        @media @tablet-strict {
-            font-size: 12px;
+        @media @desktop {
+            font-size: 16px;
         }
     }
 
@@ -451,13 +404,13 @@ a:hover {
     &__color-text {
         padding: 33px 2px 0;
         color: @color_black;
-        font-size: 16px;
-        @media @phone-strict {
-            padding-top: 10px;
+        font-size: 12px;
+        @media @tablet {
+            //  padding-top: 10px;
             font-size: 12px;
         }
-        @media @tablet-strict {
-            font-size: 12px;
+        @media @desktop {
+            font-size: 16px;
         }
     }
 
@@ -468,19 +421,19 @@ a:hover {
     }
 
     &__buy {
+        width: 37px * 8;
+        height: 37px;
+        font-size: 24px;
         margin-top: 42px;
         margin-left: 2px;
-        width: @size_button*3;
-        height: @size_button + 10px;
         color: @color_white;
         border: 1px solid @color_red;
         background-color: @color_red;
-        font-size: 30px;
         letter-spacing: .7px;
-        @media @phone-strict {
-            width: 37px * 9;
-            height: 37px;
-            font-size: 24px;
+        @media @tablet {
+            width: @size_button*3;
+            height: @size_button + 10px;
+            font-size: 30px;
         }
 
         &_btn {
@@ -506,24 +459,26 @@ a:hover {
 }
 
 .size__item {
+    width: 37px;
+    height: 37px;
+    padding-top: 0;
+    font-size: 28px;
     margin-top: 11px;
     margin-right: 9px;
-    padding-top: 8px;
-    width: @size_button - 2px;
-    height: @size_button - 10px;
     text-align: center;
     border: 1px solid @color_black;
     background-color: #fffafb;
-    font-size: 36px;
     color: @color_black;
     list-style-type: none;
-    @media @phone-strict {
-        width: 37px;
-        height: 37px;
-        padding-top: 0;
-        font-size: 28px;
+    font-family: @font_default;
+    @media @tablet {
+        padding-top: 8px;
+        width: @size_button - 2px;
+        height: @size_button - 10px;
+        font-size: 36px;
     }
-    @media @tablet-strict {
+    @media @desktop {
+
         //padding-top: 5px;
         //font-size: 28px;
     }
@@ -531,19 +486,21 @@ a:hover {
 
 .color {
     &__size {
+        width: 37px;
+        height: 37px;
+        padding-top: 0;
+        font-size: 28px;
         margin-top: 13px;
         margin-right: 9px;
-        width: @size_button - 2px;
-        height: @size_button - 2px;
         border: 1px solid @color_black;
         list-style-type: none;
-        @media @phone-strict {
-            width: 37px;
-            height: 37px;
-            padding-top: 0;
-            font-size: 28px;
+        @media @tablet {
+            width: @size_button - 2px;
+            height: @size_button - 2px;
         }
-        @media @tablet-strict {
+
+        @media @desktop {
+
             //   font-size: 12px;
         }
     }
@@ -569,14 +526,34 @@ a:hover {
 .add-to-wishlist {
     &__img {
         opacity: .5;
-        width: 25px;
+        width: 7%;
     }
 
     &__defer {
-        font-size: 16px;
+        font-size: 12px;
         color: rgb(153, 153, 153);
-        padding-left: 10px;
+        padding-left: 5px;
         text-decoration: underline;
+    }
+    @media @tablet {
+        &__img {
+            width: 10%;
+        }
+
+        &__defer {
+            font-size: 16px;
+        }
+    }
+
+    @media @desktop {
+        &__img {
+            width: 11%;
+        }
+
+        &__defer {
+            font-size: 16px;
+            padding-left: 10px;
+        }
     }
 }
 
@@ -616,15 +593,16 @@ a:hover {
         }
 
         &_instagram {
-            padding-top: 8px;
+            padding-top: 7px;
         }
     }
 }
 
 .link {
-    padding-left: 20px;
-    @media @phone-strict {
-        padding-left: 0;
+    padding-left: 0;
+
+    @media @tablet {
+        padding-left: 20px;
     }
 
     &__delivery {
@@ -673,83 +651,135 @@ a:hover {
 
 /////////
 .footer {
-    margin-top: 67px;
-    // width: 1600px;
-    //  height: 1473px;
+    margin-top: 17px;
     font-family: @font_default;
     background-color: @background_ftr_hdr;
     border-top: 1px solid @color_line;
-
-    &__wrapper {
-        max-width: 1400px;
-        margin: 0 auto;
-    }
+    //width: 375px;
+    display: flex;
+    flex-direction: column; // на телефоне элементы вертикально
+    align-items: flex-start;
 
     &__page {
-        display: flex; // на пк элементы горизонтально
-        justify-content: space-between;
-        padding-bottom: 20px;
+        margin: 10px auto;
+        height: auto;
+        display: flex;
+        flex-direction: column; // на телефоне элементы вертикально
+        align-items: center;
+        //margin-left: 10px;
+        //margin-right: 10px;
+        //  margin-left: 10px;
     }
 
     &__service {
-        width: 370px;
-    }
-
-    &__about-us {
-        margin-left: -45px;
         width: 320px;
     }
 
+    &__about-us {
+        // margin-left: -45px;
+        width: 290px;
+    }
+
     &__info {
-        width: 400px;
+        width: 300px;
     }
 
     &__social {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 300px;
+        height: auto;
     }
 
     &__line {
-        margin-top: 41px;
+        width: 330px;
+        margin: auto;
         color: @color_black;
         opacity: .5;
     }
 
     &__end {
-        font-size: 14px;
-        margin-top: 25px;
-        padding-bottom: 20px;
+        width: 330px;
+        font-size: 12px;
         line-height: 2;
+        margin: auto;
+        //margin-left: auto;
     }
 
-    @media @phone-strict {
-        width: 375px;
+    @media @tablet {
+        width: 100%;
+        display: block;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 27px;
+        font-family: @font_default;
 
         &__page {
-            height: auto;
-            flex-direction: column; // на телефоне элементы вертикально
-            align-items: center;
-            margin-left: 10px;
+            // на пк элементы горизонтально
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 20px;
         }
 
         &__info {
-            width: 300px;
+            width: 380px;
+        }
+
+        &__service {
+            width: 370px;
+        }
+
+        &__about-us {
+            margin-left: -45px;
+            width: 320px;
         }
 
         &__social {
-            flex-direction: row;
-            justify-content: space-around;
-            width: 300px;
-            height: auto;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
         }
 
         &__line {
-            width: 330px;
+            width: 96%;
+            margin-top: 41px;
         }
 
         &__end {
-            width: 375px;
+            // min-width: 768px;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 25px;
+            padding-bottom: 20px;
+        }
+    }
+
+    @media @desktop {
+        display: block;
+        margin-top: 67px;
+        font-family: @font_default;
+        //margin-left: 0;
+        width: 100%;
+
+        &__wrapper {
+            margin: 0 auto;
+            max-width: 1440px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        &__line {
+            width: 96%;
+            margin-top: 41px;
+        }
+
+        &__end {
+            max-width: 1440px;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 25px;
+            padding-bottom: 20px;
         }
     }
 }
@@ -759,14 +789,14 @@ a:hover {
     line-height: 1.5;
 
     &__header {
+        font-size: @font_size_footer - 2px;
+        text-align: center;
         color: @color_black;
         font-weight: bold;
-        font-size: @font_size_footer;
-        text-align: left;
         margin-bottom: 17px;
-        @media @phone-strict {
-            font-size: 80%;
-            text-align: center;
+        @media @tablet {
+            font-size: @font_size_footer;
+            text-align: left;
         }
     }
 
@@ -775,11 +805,11 @@ a:hover {
     }
 
     &__link {
-        font-size: 14px;
+        font-size: @font_size_footer - 4px;
         color: @color_black;
         text-align: left;
-        @media @tablet-strict {
-            font-size: @font_size_footer - 1px;
+        @media @tablet {
+            font-size: 14px;
         }
     }
 
