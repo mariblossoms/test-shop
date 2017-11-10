@@ -98,16 +98,16 @@ a:hover {
 
 //reduced the size of the logo
 .logo {
-    width: 20px;
+    max-width: 20px;
 
     &__img {
         width: 100%;
     }
     @media @tablet {
-        width: 30px;
+        max-width: 30px;
     }
     @media @desktop {
-        width: 50px;
+        max-width: 50px;
     }
 }
 
@@ -310,14 +310,14 @@ a:hover {
 
 .product__tshirt {
     min-width: 200px;
-    width: 250px;
+    max-width: 250px;
     height: auto;
     @media @tablet {
-        width: 400px;
+        max-width: 400px;
     }
 
     @media @desktop {
-        width: 698px;
+        max-width: 698px;
     }
 }
 
@@ -580,19 +580,21 @@ a:hover {
 
 .social {
     &__icon {
-        width: 32px;
+        max-width: 32px;
         margin-bottom: 6px;
 
         &_facebook {
-            width: 15px;
+            width: 55%;
             padding-top: 0;
         }
 
         &_twitter {
+            width: 100%;
             padding-top: 8px;
         }
 
         &_instagram {
+            width: 100%;
             padding-top: 7px;
         }
     }
@@ -627,15 +629,15 @@ a:hover {
 
 ////задаем размер иконок в футере
 .delivery__img {
-    width: 46px;
+    max-width: 46px;
 }
 
 .gift__img {
-    width: 28px;
+    max-width: 28px;
 }
 
 .prom__img {
-    width: 22px;
+    max-width: 22px;
 }
 
 //////////
