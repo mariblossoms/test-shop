@@ -1,13 +1,24 @@
+import PropertySelector from './property-selector.js';
+
 const productForm = document.querySelector('.js-info');
 let selectedTd;
 let selectedColor;
 const img = document.getElementById('productImg');
-const color = [
-    {colorName: 'white'},
-    {colorName: 'yellow'},
-    {colorName: 'green'},
-];
-const className = 'color_';
+const Dispatcher = document.getElementById('doc');
+
+new PropertySelector(document.getElementById('colorList'));
+
+
+Dispatcher.addEventListener('property-selected',ev => {
+    const data = ev.detail;
+    if (data.type === 'color') {
+        changePicture(data.value);
+    }
+});
+
+function changePicture(color) {
+    img.src = 'img/tshirt_' + color + '.jpg';
+}
 
 productForm.addEventListener('click', function (event) {
     const el = event.target;
@@ -16,11 +27,6 @@ productForm.addEventListener('click', function (event) {
         highlightSize(el);
     } else if (classes.contains('js-color')) {
         highlightColor(el);
-        color.forEach(el => {
-            if (classes.contains(className + el.colorName)) {
-                img.src = 'img/tshirt_' + el.colorName + '.jpg';
-            }
-        });
     }
 
 });
