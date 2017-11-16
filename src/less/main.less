@@ -37,6 +37,11 @@ a:hover {
     padding-bottom: 50px;
 }
 
+.header__block{
+    @media @desktop{
+        margin-bottom: 45px;
+    }
+}
 //
 // Name-logotype-phone
 //
@@ -50,6 +55,7 @@ a:hover {
     align-items: center;
     font-weight: bold;
     color: @color_red;
+
     //margin-left: 10px;
     &__number {
         font-family: @font_tel;
@@ -72,9 +78,10 @@ a:hover {
     }
 
     @media @desktop {
-        max-width: 1440px;
+        max-width: 1400px;
         font-size: 24px;
-        padding: 17px 20px 10px;
+        padding: 17px 20px 0;
+        margin-bottom: 13px;
 
         &__number {
             font-family: @font_tel;
@@ -154,12 +161,16 @@ a:hover {
     }
 
     @media @desktop {
-        max-width: 1440px;
+        max-width: 1400px;
         //margin: auto;
         padding-left: 20px;
         padding-right: 20px;
         font-size: 16px;
         height: 50px;
+
+        &__menu {
+            text-align: left;
+        }
 
         &__search {
             height: 36px;
@@ -208,12 +219,13 @@ a:hover {
     }
 
     &__img {
-        //padding-top: 5px;
         width: 10%;
         height: 60%;
-        //@media @phone-strict {
-        //    opacity: 0;
-        //}
+    }
+
+    @media @desktop {
+        width: 275px;
+        height: 35px;
     }
 }
 
@@ -243,9 +255,10 @@ a:hover {
     }
 
     @media @desktop {
-        max-width: 1440px;
+        max-width: 1400px;
         font-size: 16px;
-        padding: 44px 20px 0;
+        padding: 0 20px;
+        margin-bottom: 20px;
     }
 }
 
@@ -289,11 +302,9 @@ a:hover {
     }
 
     @media @desktop {
-        max-width: 1440px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: 20px;
-        padding-left: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
 
         &__img {
             //margin-left: 10px;
@@ -547,7 +558,7 @@ a:hover {
 
     @media @desktop {
         &__img {
-            width: 11%;
+            width: 13%;
         }
 
         &__defer {
@@ -653,7 +664,7 @@ a:hover {
 
 /////////
 .footer {
-    margin-top: 17px;
+    margin-top: auto;
     font-family: @font_default;
     background-color: @background_ftr_hdr;
     border-top: 1px solid @color_line;
@@ -766,7 +777,7 @@ a:hover {
 
         &__wrapper {
             margin: 0 auto;
-            max-width: 1440px;
+            max-width: 1400px;
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -777,7 +788,7 @@ a:hover {
         }
 
         &__end {
-            max-width: 1440px;
+            max-width: 1400px;
             width: 100%;
             font-size: 14px;
             margin-top: 25px;
