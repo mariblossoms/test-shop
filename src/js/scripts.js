@@ -1,37 +1,48 @@
-const productForm = document.querySelector('.product__info');
+import PropertySelector from './property-selector.js';
+
+const productForm = document.querySelector('.js-info');
 let selectedTd;
 let selectedColor;
+const img = document.getElementById('productImg');
+const Dispatcher = document.getElementById('doc');
+
+new PropertySelector(document.getElementById('colorList'));
+
+
+Dispatcher.addEventListener('property-selected',ev => {
+    const data = ev.detail;
+    if (data.type === 'color') {
+        changePicture(data.value);
+    }
+});
+
+function changePicture(color) {
+    img.src = 'img/tshirt_' + color + '.jpg';
+}
 
 productForm.addEventListener('click', function (event) {
     const el = event.target;
     const classes = el.classList;
-    if (classes.contains('size__b-size')) {
+    if (classes.contains('js-sizeProduct')) {
         highlightSize(el);
-    }   else if (classes.contains('color__size')) {
+    } else if (classes.contains('js-color')) {
         highlightColor(el);
-        const img = document.getElementById('img__id');
-        if (classes.contains('color__1')) {
-            img.src = 'img/tshirt_white.jpg';
-        } else if (classes.contains('color__2')) {
-            img.src = 'img/tshirt_yellow.jpg';
-        } else if (classes.contains('color__3')) {
-            img.src = 'img/tshirt_green.jpg';
-        }
     }
 
 });
 
 function highlightSize(node) {
     if(selectedTd) {
-        selectedTd.classList.remove('size__b-size_active');
+        selectedTd.classList.remove('js-sizeProduct_active');
     }
     selectedTd = node;
-    selectedTd.classList.add('size__b-size_active');
+    selectedTd.classList.add('js-sizeProduct_active');
 }
 function highlightColor(node) {
     if(selectedColor) {
-        selectedColor.classList.remove('color__size_active');
+        selectedColor.classList.remove('js-color_active');
     }
     selectedColor = node;
-    selectedColor.classList.add('color__size_active');
+    selectedColor.classList.add('js-color_active');
 }
+

@@ -3,11 +3,13 @@ const less = require('gulp-less');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
 const autoprefixer = require('gulp-autoprefixer');
-const rename       = require('gulp-rename');
-const ejs          = require('gulp-ejs');
-const gutil        = require('gulp-util');
+const rename = require('gulp-rename');
+const ejs = require('gulp-ejs');
+const gutil = require('gulp-util');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
+const gulpIf = require('gulp-if');
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 //const path         = require('path');
 
 // Автоперезагрузка при изменении файлов в папке `dist`:
@@ -37,12 +39,12 @@ gulp.task('styles', () => {
 
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
-        .pipe(imagemin({
+        .pipe(gulpIf(isDevelopment, imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()],
             interlaced: true
-        }))
+        })))
         .pipe(gulp.dest('./dist/img'));
 });
 
@@ -53,8 +55,8 @@ gulp.task('js', () => {
 
 gulp.task('html', () => {
     gulp.src('src/index.ejs')
-    .pipe(ejs().on('error', gutil.log))
-    .pipe(rename('index.html'))
+        .pipe(ejs().on('error', gutil.log))
+        .pipe(rename('index.html'))
         .pipe(gulp.dest('./dist'));
 });
 
