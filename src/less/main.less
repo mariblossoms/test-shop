@@ -34,7 +34,7 @@ a:hover {
 }
 
 .content {
-    padding-bottom: 50px;
+    margin-bottom: 117px;
 }
 
 .header__block{
@@ -98,7 +98,7 @@ a:hover {
         &__phone {
             text-align: right;
             font-family: @font_default;
-            letter-spacing: .4px;
+            letter-spacing: 0;
         }
     }
 }
@@ -135,6 +135,7 @@ a:hover {
     justify-content: space-around;
     height: 60px;
     font-size: 12px;
+    font-family: @font_default;
     padding-left: 10px;
 
     &__menu {
@@ -174,6 +175,7 @@ a:hover {
 
         &__search {
             height: 36px;
+            margin-bottom: 0;
         }
     }
 }
@@ -186,7 +188,7 @@ a:hover {
     }
 
     &__item {
-        margin-right: 15px;
+        margin-right: 20px;
     }
 
     &__link {
@@ -234,6 +236,7 @@ a:hover {
     margin: auto;
     padding: 10px;
     font-size: 12px;
+    font-family: @font_default;
 
     &__list {
         display: flex;
@@ -242,7 +245,7 @@ a:hover {
     }
 
     &__item {
-        margin-right: 5px;
+        margin-right: 2px;
     }
 
     &__link {
@@ -338,22 +341,20 @@ a:hover {
         color: @color_black;
         font-weight: bold;
         text-align: left;
-        padding: 0 3px;
-        letter-spacing: .2px;
-        // position: relative;
         @media @tablet {
             font-size: 24px;
         }
         @media @desktop {
             font-size: 36px;
+            margin-bottom: 11px;
         }
     }
 
     &__composition {
         font-size: 12px;
-        letter-spacing: .2px;
+        font-family: @font_default;
         color: @color_black;
-        padding: 6px 4px 0;
+        padding-left: 2px;
         max-width: 690px;
         min-height: 32px;
         width: 300px;
@@ -363,12 +364,13 @@ a:hover {
         }
         @media @desktop {
             font-size: 16px;
+            letter-spacing: .1px;
+            margin-bottom: 18px;
         }
     }
 
     &__price {
         font-family: @font_default;
-        padding-top: 27px;
         font-weight: bold;
         color: @color_red;
         font-size: 28px;
@@ -379,6 +381,7 @@ a:hover {
         }
         @media @desktop {
             font-size: 36px;
+            margin-bottom: 20px;
         }
 
         &_currency {
@@ -404,12 +407,15 @@ a:hover {
         }
         @media @desktop {
             font-size: 16px;
+            padding: 0;
+            margin-bottom: 2px;
         }
     }
 
     &__size {
         display: flex;
-        margin-left: 2px;
+        padding-left: 2px;
+        margin-bottom: 32px;
     }
 
     &__color-text {
@@ -422,21 +428,22 @@ a:hover {
         }
         @media @desktop {
             font-size: 16px;
+            padding: 0;
         }
     }
 
     &__color {
         display: flex;
         align-items: flex-end;
-        margin-left: 2px;
+        padding-left: 2px;
+        margin-bottom: 42px;
     }
 
     &__buy {
         width: 37px * 8;
         height: 37px;
         font-size: 24px;
-        margin-top: 42px;
-        margin-left: 2px;
+        padding-left: 2px;
         color: @color_white;
         border: 1px solid @color_red;
         background-color: @color_red;
@@ -454,6 +461,11 @@ a:hover {
             height: 100%;
             color: @color_white;
         }
+
+        @media @desktop {
+            margin-bottom: 42px;
+            padding-left: 5px;
+        }
     }
 
     &__add-to-wish-list {
@@ -465,6 +477,11 @@ a:hover {
 
         &__defer {
             padding-left: 20px;
+        }
+
+        @media @desktop {
+            margin: 0;
+            padding-left: 5px;
         }
     }
 }
@@ -563,7 +580,6 @@ a:hover {
 
         &__defer {
             font-size: 16px;
-            padding-left: 10px;
         }
     }
 }
@@ -571,11 +587,6 @@ a:hover {
 //
 //FOOTER
 //
-.footer__info,
-.footer__social {
-    line-height: 2;
-    margin-top: 65px;
-}
 
 .info__link,
 .footer__social {
@@ -664,17 +675,15 @@ a:hover {
 
 /////////
 .footer {
-    margin-top: auto;
     font-family: @font_default;
     background-color: @background_ftr_hdr;
     border-top: 1px solid @color_line;
-    //width: 375px;
     display: flex;
     flex-direction: column; // на телефоне элементы вертикально
     align-items: flex-start;
 
     &__page {
-        margin: 10px auto;
+        margin: 0 auto;
         height: auto;
         display: flex;
         flex-direction: column; // на телефоне элементы вертикально
@@ -695,6 +704,7 @@ a:hover {
 
     &__info {
         width: 300px;
+        margin-top: 62px;
     }
 
     &__social {
@@ -703,6 +713,7 @@ a:hover {
         justify-content: space-around;
         width: 300px;
         height: auto;
+        margin-top: 65px;
     }
 
     &__line {
@@ -723,20 +734,20 @@ a:hover {
     @media @tablet {
         width: 100%;
         display: block;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 27px;
+        //padding-left: 20px;
+        //padding-right: 20px;
+        //margin-top: 27px;
         font-family: @font_default;
 
         &__page {
             // на пк элементы горизонтально
             flex-direction: row;
             justify-content: space-between;
-            padding-bottom: 20px;
+            margin-bottom: 51px;
         }
 
         &__info {
-            width: 380px;
+            width: 400px;
         }
 
         &__service {
@@ -751,12 +762,11 @@ a:hover {
         &__social {
             flex-direction: column;
             align-items: center;
-            width: 150px;
+            width: 35px;
         }
 
         &__line {
             width: 96%;
-            margin-top: 41px;
         }
 
         &__end {
@@ -770,29 +780,24 @@ a:hover {
 
     @media @desktop {
         display: block;
-        margin-top: 67px;
+        //margin-top: 67px;
         font-family: @font_default;
-        //margin-left: 0;
-        width: 100%;
+        margin: 0 auto;
+
 
         &__wrapper {
             margin: 0 auto;
+            width: 100%;
             max-width: 1400px;
-            padding-left: 20px;
-            padding-right: 20px;
         }
 
         &__line {
-            width: 96%;
-            margin-top: 41px;
+            width: 100%;
         }
 
         &__end {
-            max-width: 1400px;
             width: 100%;
             font-size: 14px;
-            margin-top: 25px;
-            padding-bottom: 20px;
         }
     }
 }

@@ -79,7 +79,7 @@
                 <% const size = ['S', 'M', 'L'] %>
                 <ul class="info__size size">
                     <% size.forEach(function (item, index) { %>
-                    <li class="size__item js-sizeProduct"><%= item %>
+                    <li class="size__item js-sizeProduct" data-type="size" data-value="<%= item %>"><%= item %>
                     </li>
                     <% }) %>
                 </ul>

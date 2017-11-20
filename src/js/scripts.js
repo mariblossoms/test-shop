@@ -12,7 +12,10 @@ new PropertySelector(document.getElementById('colorList'));
 Dispatcher.addEventListener('property-selected',ev => {
     const data = ev.detail;
     if (data.type === 'color') {
+        localStorage.setItem(data.type, data.value);
         changePicture(data.value);
+    } else if (data.type === 'size') {
+        localStorage.setItem(data.type, data.value);
     }
 });
 
@@ -27,6 +30,7 @@ productForm.addEventListener('click', function (event) {
         highlightSize(el);
     } else if (classes.contains('js-color')) {
         highlightColor(el);
+
     }
 
 });
@@ -46,3 +50,8 @@ function highlightColor(node) {
     selectedColor.classList.add('js-color_active');
 }
 
+const lastColor = localStorage.getItem('color');
+if (lastColor){
+    changePicture(lastColor);
+//    highlightColor(lastColor);
+}
