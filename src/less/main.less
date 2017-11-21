@@ -8,7 +8,7 @@
 @color_gray: rgb(217, 217, 212);
 @color_white: rgb(255, 255, 255);
 @color_black: rgb(0, 0, 0);
-@font_size_footer: 16px;
+@font_size_footer: 1em;
 @font_default: 'Roboto';
 @font_tel: 'Consolas';
 @pad: 20px; //100px
@@ -18,11 +18,14 @@
 @large_margin: 150px;
 @background_ftr_hdr: #f2f2ed;
 @color_line: rgb(217, 217, 212);
+@button_size_color: 66px;
 
 html,
 body {
     min-height: 100%;
-    width: 100%;
+    //   width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -33,15 +36,17 @@ a:hover {
     text-decoration: none;
 }
 
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
 .content {
+    width: 100%;
     margin-bottom: 117px;
 }
 
-.header__block{
-    @media @desktop{
-        margin-bottom: 45px;
-    }
-}
 //
 // Name-logotype-phone
 //
@@ -122,7 +127,8 @@ a:hover {
 //navigation and search menu
 //
 .h-menu {
-    //width: 100%;
+    width: 100%;
+    margin-bottom: 45px;
     background-color: @background_ftr_hdr;
     border-bottom: 1px solid @color_line;
     border-top: 1px solid @color_line;
@@ -130,13 +136,14 @@ a:hover {
 
 .h-menu-wrapper {
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     flex-direction: column;
     justify-content: space-around;
     height: 60px;
     font-size: 12px;
     font-family: @font_default;
     padding-left: 10px;
+    padding-right: 10px;
 
     &__menu {
         text-align: left;
@@ -148,25 +155,16 @@ a:hover {
     }
 
     @media @tablet {
-        //max-width: 768px;
+        padding-left: 20px;
+        padding-right: 20px;
         font-size: 16px;
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
-        padding-left: 20px;
-        padding-right: 20px;
-        //align-items: center;
-        &__search {
-            //margin-right: @tablet-strict_margin;
-        }
     }
 
     @media @desktop {
         max-width: 1400px;
-        //margin: auto;
-        padding-left: 20px;
-        padding-right: 20px;
-        font-size: 16px;
         height: 50px;
 
         &__menu {
@@ -284,13 +282,16 @@ a:hover {
 
     &__img {
         text-align: left;
+        width: 50%;
+        min-width: 300px;
     }
 
     &__info {
-        display: block;
         padding-left: 0;
         margin-top: 10px;
-        //  background-color: aquamarine;
+        width: 45.8%;
+        min-width: 300px;
+        font-family: @font_default;
     }
 
     @media @tablet {
@@ -299,8 +300,10 @@ a:hover {
         flex-direction: row;
         justify-content: space-between;
 
+
         &__info {
             padding-left: 10px;
+            margin-top: 0;
         }
     }
 
@@ -310,37 +313,29 @@ a:hover {
         padding: 0 20px;
 
         &__img {
-            //margin-left: 10px;
-            text-align: center; //// расположение картинки в центре блока
+            //padding-right: 30px;
         }
 
         &__info {
-            font-family: @font_default;
-            padding-left: 63px;
-            margin-top: -10px;
+            // padding-left: 100px;
+            margin-top: -9px;
         }
     }
 }
 
 .product__tshirt {
-    min-width: 200px;
-    max-width: 250px;
-    height: auto;
-    @media @tablet {
-        max-width: 400px;
-    }
-
-    @media @desktop {
-        max-width: 698px;
-    }
+    max-width: 100%;
 }
 
 .info {
+    display: block;
+
     &__name {
         font-size: 20px;
         color: @color_black;
         font-weight: bold;
         text-align: left;
+        margin-bottom: 5px;
         @media @tablet {
             font-size: 24px;
         }
@@ -358,6 +353,7 @@ a:hover {
         max-width: 690px;
         min-height: 32px;
         width: 300px;
+        margin-bottom: 10px;
         @media @tablet {
             font-size: 12px;
             width: auto;
@@ -383,24 +379,26 @@ a:hover {
             font-size: 36px;
             margin-bottom: 20px;
         }
+    }
 
-        &_currency {
-            font-family: @font_tel;
+    &__currency {
+        font-family: @font_tel;
+        font-size: 32px;
+        font-weight: bold;
+        @media @tablet {
             font-size: 32px;
-            font-weight: bold;
-            @media @tablet {
-                font-size: 34px;
-            }
-            @media @desktop {
-                font-size: 40px;
-            }
+        }
+        @media @desktop {
+            font-size: 40px;
         }
     }
+
 
     &__size-text {
         padding: 21px 2px 0;
         color: @color_black;
         font-size: 12px;
+        margin-bottom: 13px;
         @media @tablet {
             padding-top: 10px;
             font-size: 12px;
@@ -408,20 +406,23 @@ a:hover {
         @media @desktop {
             font-size: 16px;
             padding: 0;
-            margin-bottom: 2px;
         }
     }
 
     &__size {
         display: flex;
         padding-left: 2px;
-        margin-bottom: 32px;
+        margin-bottom: 0;
+        @media @desktop {
+            margin-bottom: 32px;
+        }
     }
 
     &__color-text {
         padding: 33px 2px 0;
         color: @color_black;
         font-size: 12px;
+        margin-bottom: 13px;
         @media @tablet {
             //  padding-top: 10px;
             font-size: 12px;
@@ -436,7 +437,7 @@ a:hover {
         display: flex;
         align-items: flex-end;
         padding-left: 2px;
-        margin-bottom: 42px;
+        margin-bottom: 45px;
     }
 
     &__buy {
@@ -491,7 +492,6 @@ a:hover {
     height: 37px;
     padding-top: 0;
     font-size: 28px;
-    margin-top: 11px;
     margin-right: 9px;
     text-align: center;
     border: 1px solid @color_black;
@@ -506,7 +506,9 @@ a:hover {
         font-size: 36px;
     }
     @media @desktop {
-
+        width: 61px;
+        height: 55px;
+        margin-left: 2px;
         //padding-top: 5px;
         //font-size: 28px;
     }
@@ -518,7 +520,6 @@ a:hover {
         height: 37px;
         padding-top: 0;
         font-size: 28px;
-        margin-top: 13px;
         margin-right: 9px;
         border: 1px solid @color_black;
         list-style-type: none;
@@ -528,7 +529,9 @@ a:hover {
         }
 
         @media @desktop {
-
+            width: 61px;
+            height: 63px;
+            margin-left: 2px;
             //   font-size: 12px;
         }
     }
@@ -662,10 +665,6 @@ a:hover {
     max-width: 22px;
 }
 
-//////////
-
-//////выравнивание трертьей колонки с иконками
-
 .delivery__text,
 .gift__text,
 .prom__text {
@@ -675,6 +674,8 @@ a:hover {
 
 /////////
 .footer {
+    width: 100%;
+    padding: 0 10px;
     font-family: @font_default;
     background-color: @background_ftr_hdr;
     border-top: 1px solid @color_line;
@@ -694,16 +695,18 @@ a:hover {
     }
 
     &__service {
-        width: 320px;
+        max-width: 320px;
+        margin-top: 20px;
     }
 
     &__about-us {
         // margin-left: -45px;
-        width: 290px;
+        margin-top: 20px;
+        max-width: 300px;
     }
 
     &__info {
-        width: 300px;
+        max-width: 300px;
         margin-top: 62px;
     }
 
@@ -725,7 +728,7 @@ a:hover {
 
     &__end {
         width: 330px;
-        font-size: 12px;
+        font-size: .750em;
         line-height: 2;
         margin: auto;
         //margin-left: auto;
@@ -733,31 +736,32 @@ a:hover {
 
     @media @tablet {
         width: 100%;
-        display: block;
-        //padding-left: 20px;
-        //padding-right: 20px;
-        //margin-top: 27px;
+        padding: 0 20px;
         font-family: @font_default;
 
         &__page {
             // на пк элементы горизонтально
             flex-direction: row;
             justify-content: space-between;
-            margin-bottom: 51px;
-        }
-
-        &__info {
-            width: 400px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            min-width: 768px;
+            // margin-top: 0;
+            // width: 100%;
         }
 
         &__service {
-            width: 370px;
+            margin-top: 55px;
         }
 
         &__about-us {
-            margin-left: -45px;
-            width: 320px;
+            margin-top: 55px;
         }
+
+        &__info {
+            margin-top: 62px;
+        }
+
 
         &__social {
             flex-direction: column;
@@ -772,49 +776,80 @@ a:hover {
         &__end {
             // min-width: 768px;
             width: 100%;
-            font-size: 14px;
+            font-size: .750em;
             margin-top: 25px;
             padding-bottom: 20px;
         }
     }
 
     @media @desktop {
-        display: block;
+        //display: block;
         //margin-top: 67px;
         font-family: @font_default;
-        margin: 0 auto;
-
+        padding: 0;
 
         &__wrapper {
             margin: 0 auto;
             width: 100%;
             max-width: 1400px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        &__page {
+            //width: 100%;
+            //max-width: 1400px;
+        }
+
+        &__service {
+            margin-top: 55px;
+            width: 25%;
+        }
+
+        &__about-us {
+            margin-top: 55px;
+            width: 25%;
+            margin-left: -40px;
+        }
+
+        &__info {
+            margin-top: 62px;
+            width: 25%;
+        }
+
+        &__social {
+            margin-top: 65px;
+            width: 3%;
         }
 
         &__line {
-            width: 100%;
+            // width: 100%;
         }
 
         &__end {
-            width: 100%;
-            font-size: 14px;
+            // width: 100%;
+            margin-top: 25px;
+            font-size: .875em;
         }
     }
 }
 
+
 .block-ftr {
-    margin-top: 55px;
     line-height: 1.5;
 
     &__header {
-        font-size: @font_size_footer - 2px;
+        font-size: .850em;
         text-align: center;
         color: @color_black;
         font-weight: bold;
         margin-bottom: 17px;
         @media @tablet {
-            font-size: @font_size_footer;
+            font-size: .850em;
             text-align: left;
+        }
+        @media @desktop {
+            font-size: 1em;
         }
     }
 
@@ -823,11 +858,14 @@ a:hover {
     }
 
     &__link {
-        font-size: @font_size_footer - 4px;
+        font-size: .750em;
         color: @color_black;
         text-align: left;
         @media @tablet {
-            font-size: 14px;
+            font-size: .850em;
+        }
+        @media @desktop {
+            font-size: .850em;
         }
     }
 
@@ -835,5 +873,11 @@ a:hover {
         list-style-type: none;
         column-count: 2;
         column-gap: 0;
+        @media @tablet {
+            column-count: 1;
+        }
+        @media @desktop {
+            column-count: 2;
+        }
     }
 }

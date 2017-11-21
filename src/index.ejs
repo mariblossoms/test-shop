@@ -11,10 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
-<body>
+<body onload="init()">
 <div class="page">
     <div class="content">
-        <div class="header__block">
             <header class="header">
                 <div class="header__number number">7h3 5h0p
                 </div>
@@ -46,7 +45,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+
         <div class="breadcrumbs">
             <% const bread = ['LISP', 'Одежда', 'Футболки'] %>
             <div class="breadcrumbs-menu">
@@ -70,11 +69,11 @@
                 <img class="product__tshirt" alt="7h3 5h0p" id="productImg" src="img/tshirt_white.jpg">
             </div>
 
-            <form action="#" class="product__info js-info" method="post">
+            <form action="#" class="product__info js-info" method="post" >
                 <h2 class="info__name">Футболка Alien technology</h2>
                 <p class="info__composition">Состав: 100% хлопок, динамическая типизация, польская нотация.
                     Производство: Россия</p>
-                <p class="info__price">1500<span class="info__price_currency">₽</span></p>
+                <p class="info__price">1500<span class="info__currency">₽</span></p>
                 <p class="info__size-text">Размер:</p>
                 <% const size = ['S', 'M', 'L'] %>
                 <ul class="info__size size">
