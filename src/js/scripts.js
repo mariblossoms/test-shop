@@ -50,11 +50,11 @@ const lastColor = localStorage.getItem('color');
 const lastSize = localStorage.getItem('size');
 if (lastColor) {
     changePicture(lastColor);
-    alert('Последний раз Вы выбрали - ' + lastColor + ' цвет');
+    //alert('Последний раз Вы выбрали - ' + lastColor + ' цвет');
 }
 if (lastSize) {
     changeSize(lastSize);
-    alert('Последний раз Вы выбрали - ' + lastSize + ' размер');
+    //alert('Последний раз Вы выбрали - ' + lastSize + ' размер');
 }
 
 

@@ -22,10 +22,7 @@
 
 html,
 body {
-    min-height: 100%;
-    //   width: 100%;
-    margin: 0;
-    padding: 0;
+    display: inherit;
 }
 
 a {
@@ -37,14 +34,20 @@ a:hover {
 }
 
 .page {
+    max-width: 100%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-}
 
-.content {
-    width: 100%;
-    margin-bottom: 117px;
+    &__content {
+        width: 100%;
+        margin-bottom: 117px;
+    }
+
+    &__footer {
+        width: 100%;
+    }
 }
 
 //
@@ -393,7 +396,6 @@ a:hover {
         }
     }
 
-
     &__size-text {
         padding: 21px 2px 0;
         color: @color_black;
@@ -674,7 +676,6 @@ a:hover {
 
 /////////
 .footer {
-    width: 100%;
     padding: 0 10px;
     font-family: @font_default;
     background-color: @background_ftr_hdr;
@@ -683,7 +684,7 @@ a:hover {
     flex-direction: column; // на телефоне элементы вертикально
     align-items: flex-start;
 
-    &__page {
+    &__block {
         margin: 0 auto;
         height: auto;
         display: flex;
@@ -695,7 +696,7 @@ a:hover {
     }
 
     &__service {
-        max-width: 320px;
+        width: 330px;
         margin-top: 20px;
     }
 
@@ -735,19 +736,19 @@ a:hover {
     }
 
     @media @tablet {
-        width: 100%;
         padding: 0 20px;
         font-family: @font_default;
 
-        &__page {
+        &__wrapper {
+            width: 95%;
+        }
+
+        &__block {
             // на пк элементы горизонтально
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 40px;
-            min-width: 768px;
-            // margin-top: 0;
-            // width: 100%;
         }
 
         &__service {
@@ -761,7 +762,6 @@ a:hover {
         &__info {
             margin-top: 62px;
         }
-
 
         &__social {
             flex-direction: column;
@@ -777,7 +777,6 @@ a:hover {
             // min-width: 768px;
             width: 100%;
             font-size: .750em;
-            margin-top: 25px;
             padding-bottom: 20px;
         }
     }
@@ -790,26 +789,19 @@ a:hover {
 
         &__wrapper {
             margin: 0 auto;
-            width: 100%;
-            max-width: 1400px;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        &__page {
             //width: 100%;
-            //max-width: 1400px;
+            max-width: 1400px;
         }
 
         &__service {
             margin-top: 55px;
-            width: 25%;
+            width: 400px;
         }
 
         &__about-us {
             margin-top: 55px;
             width: 25%;
-            margin-left: -40px;
+            margin-left: -60px;
         }
 
         &__info {
@@ -833,7 +825,6 @@ a:hover {
         }
     }
 }
-
 
 .block-ftr {
     line-height: 1.5;
