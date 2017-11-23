@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
-<body onload="init()">
+<body>
 <div class="page">
     <div class="content">
             <header class="header">
@@ -76,7 +76,7 @@
                 <p class="info__price">1500<span class="info__currency">₽</span></p>
                 <p class="info__size-text">Размер:</p>
                 <% const size = ['S', 'M', 'L'] %>
-                <ul class="info__size size">
+                <ul id="jsSize" class="info__size size">
                     <% size.forEach(function (item, index) { %>
                     <li class="size__item js-sizeProduct" data-type="size" data-value="<%= item %>"><%= item %>
                     </li>
@@ -85,7 +85,7 @@
 
                 <p class="info__color-text">Цвет:</p>
                 <% const color = ['white', 'yellow', 'green'] %>
-                <ul class="info__color color" id="colorList">
+                <ul class="info__color color" id="jsColor">
                     <% color.forEach(function (item, index) { %>
                     <li class="color__size js-color color_<%= item %>" data-type="color" data-value="<%= item %>"></li>
                     <% }) %>
